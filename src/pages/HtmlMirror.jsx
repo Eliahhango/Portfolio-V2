@@ -25,13 +25,14 @@ const HtmlMirror = ({ src }) => {
         width: 100%;
         height: 100%;
         pointer-events: none;
-        z-index: 0;
-        opacity: 0.7;
+        z-index: 2147483000;
+        opacity: 0.5;
+        mix-blend-mode: multiply;
       }
 
-      main, nav, header, footer, section {
+      .ezw-network-layered {
         position: relative;
-        z-index: 1;
+        z-index: 2147483001;
       }
 
       .ezw-reveal {
@@ -126,13 +127,15 @@ const HtmlMirror = ({ src }) => {
       const win = iframe.contentWindow
 
       const nodes = []
-      const nodeCount = win.innerWidth < 768 ? 22 : 36
-      const maxDistance = win.innerWidth < 768 ? 130 : 170
+      const nodeCount = win.innerWidth < 768 ? 18 : 34
+      const maxDistance = win.innerWidth < 768 ? 125 : 170
       const pointer = { x: win.innerWidth / 2, y: win.innerHeight / 2, active: false }
+      const dpr = Math.min(win.devicePixelRatio || 1, 2)
 
       const resizeCanvas = () => {
-        canvas.width = win.innerWidth
-        canvas.height = win.innerHeight
+        canvas.width = Math.floor(win.innerWidth * dpr)
+        canvas.height = Math.floor(win.innerHeight * dpr)
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       }
 
       const onPointerMove = (event) => {
@@ -142,6 +145,18 @@ const HtmlMirror = ({ src }) => {
       }
 
       const onPointerLeave = () => {
+        pointer.active = false
+      }
+
+      const onTouchMove = (event) => {
+        const point = event.touches && event.touches[0]
+        if (!point) return
+        pointer.x = point.clientX
+        pointer.y = point.clientY
+        pointer.active = true
+      }
+
+      const onTouchEnd = () => {
         pointer.active = false
       }
 
@@ -209,8 +224,14 @@ const HtmlMirror = ({ src }) => {
 
       resizeCanvas()
       win.addEventListener('resize', resizeCanvas)
+      win.addEventListener('orientationchange', resizeCanvas)
       doc.addEventListener('mousemove', onPointerMove)
       doc.addEventListener('mouseleave', onPointerLeave)
+      doc.addEventListener('touchmove', onTouchMove, { passive: true })
+      doc.addEventListener('touchend', onTouchEnd, { passive: true })
+
+      const layeredNodes = Array.from(doc.querySelectorAll('main, nav, header, footer, section'))
+      layeredNodes.forEach((node) => node.classList.add('ezw-network-layered'))
       draw()
     }
 
@@ -287,12 +308,12 @@ const HtmlMirror = ({ src }) => {
   }
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-white">
+    <div className="w-full min-h-[100dvh] h-[100dvh] overflow-hidden bg-white">
       <iframe
         ref={iframeRef}
         title={src}
         src={src}
-        className="w-full h-full border-0"
+        className="w-full h-[100dvh] border-0"
         loading="eager"
         referrerPolicy="no-referrer"
         onLoad={injectAnimations}
