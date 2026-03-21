@@ -25,14 +25,8 @@ const HtmlMirror = ({ src }) => {
         width: 100%;
         height: 100%;
         pointer-events: none;
-        z-index: 2147483000;
-        opacity: 0.5;
-        mix-blend-mode: multiply;
-      }
-
-      .ezw-network-layered {
-        position: relative;
-        z-index: 2147483001;
+        z-index: 2147483640;
+        opacity: 0.35;
       }
 
       .ezw-reveal {
@@ -109,33 +103,32 @@ const HtmlMirror = ({ src }) => {
           transition: none !important;
         }
 
-        #ezw-network-canvas {
-          display: none !important;
-        }
       }
     `
     doc.head.appendChild(style)
 
-    const prefersReducedMotion = iframe.contentWindow.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const canvas = doc.createElement('canvas')
+    canvas.id = 'ezw-network-canvas'
+    doc.body.prepend(canvas)
 
-    if (!prefersReducedMotion) {
-      const canvas = doc.createElement('canvas')
-      canvas.id = 'ezw-network-canvas'
-      doc.body.prepend(canvas)
-
-      const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d')
+    if (ctx) {
       const win = iframe.contentWindow
-
       const nodes = []
-      const nodeCount = win.innerWidth < 768 ? 18 : 34
-      const maxDistance = win.innerWidth < 768 ? 125 : 170
+      const isMobile = win.innerWidth < 768
+      const nodeCount = isMobile ? 20 : 36
+      const maxDistance = isMobile ? 130 : 175
       const pointer = { x: win.innerWidth / 2, y: win.innerHeight / 2, active: false }
-      const dpr = Math.min(win.devicePixelRatio || 1, 2)
+      let rafId = 0
+      let lastTs = 0
+      const targetFps = isMobile ? 32 : 50
+      const frameStep = 1000 / targetFps
 
       const resizeCanvas = () => {
-        canvas.width = Math.floor(win.innerWidth * dpr)
-        canvas.height = Math.floor(win.innerHeight * dpr)
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+        const scale = Math.min(win.devicePixelRatio || 1, 2)
+        canvas.width = Math.floor(win.innerWidth * scale)
+        canvas.height = Math.floor(win.innerHeight * scale)
+        ctx.setTransform(scale, 0, 0, scale, 0, 0)
       }
 
       const onPointerMove = (event) => {
@@ -164,41 +157,46 @@ const HtmlMirror = ({ src }) => {
         nodes.push({
           x: Math.random() * win.innerWidth,
           y: Math.random() * win.innerHeight,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.45,
-          r: Math.random() * 1.6 + 0.8,
+          vx: (Math.random() - 0.5) * (isMobile ? 0.32 : 0.42),
+          vy: (Math.random() - 0.5) * (isMobile ? 0.32 : 0.42),
+          r: Math.random() * 1.4 + 0.8,
         })
       }
 
-      const draw = () => {
-        if (!ctx) return
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      const draw = (ts = 0) => {
+        if (ts - lastTs < frameStep) {
+          rafId = win.requestAnimationFrame(draw)
+          return
+        }
+        lastTs = ts
+
+        ctx.clearRect(0, 0, win.innerWidth, win.innerHeight)
 
         for (let i = 0; i < nodes.length; i += 1) {
           const a = nodes[i]
+
           if (pointer.active) {
             const pdx = pointer.x - a.x
             const pdy = pointer.y - a.y
             const pDistance = Math.sqrt(pdx * pdx + pdy * pdy)
             if (pDistance < 220 && pDistance > 0) {
-              const pull = (1 - pDistance / 220) * 0.006
+              const pull = (1 - pDistance / 220) * 0.0038
               a.vx += pdx * pull
               a.vy += pdy * pull
             }
           }
 
-          a.vx *= 0.994
-          a.vy *= 0.994
-
+          a.vx *= 0.996
+          a.vy *= 0.996
           a.x += a.vx
           a.y += a.vy
 
-          if (a.x < 0 || a.x > canvas.width) a.vx *= -1
-          if (a.y < 0 || a.y > canvas.height) a.vy *= -1
+          if (a.x < 0 || a.x > win.innerWidth) a.vx *= -1
+          if (a.y < 0 || a.y > win.innerHeight) a.vy *= -1
 
           ctx.beginPath()
           ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2)
-          ctx.fillStyle = 'rgba(0, 102, 255, 0.55)'
+          ctx.fillStyle = 'rgba(0, 102, 255, 0.72)'
           ctx.fill()
 
           for (let j = i + 1; j < nodes.length; j += 1) {
@@ -208,18 +206,18 @@ const HtmlMirror = ({ src }) => {
             const distance = Math.sqrt(dx * dx + dy * dy)
 
             if (distance < maxDistance) {
-              const alpha = (1 - distance / maxDistance) * 0.42
+              const alpha = (1 - distance / maxDistance) * 0.5
               ctx.beginPath()
               ctx.moveTo(a.x, a.y)
               ctx.lineTo(b.x, b.y)
               ctx.strokeStyle = `rgba(0, 102, 255, ${alpha})`
-              ctx.lineWidth = 0.9
+              ctx.lineWidth = 1
               ctx.stroke()
             }
           }
         }
 
-        win.requestAnimationFrame(draw)
+        rafId = win.requestAnimationFrame(draw)
       }
 
       resizeCanvas()
@@ -230,9 +228,15 @@ const HtmlMirror = ({ src }) => {
       doc.addEventListener('touchmove', onTouchMove, { passive: true })
       doc.addEventListener('touchend', onTouchEnd, { passive: true })
 
-      const layeredNodes = Array.from(doc.querySelectorAll('main, nav, header, footer, section'))
-      layeredNodes.forEach((node) => node.classList.add('ezw-network-layered'))
-      draw()
+      doc.addEventListener('visibilitychange', () => {
+        if (doc.visibilityState === 'hidden') {
+          win.cancelAnimationFrame(rafId)
+          return
+        }
+        rafId = win.requestAnimationFrame(draw)
+      })
+
+      rafId = win.requestAnimationFrame(draw)
     }
 
     const sectionNodes = Array.from(doc.querySelectorAll('section, main > div, article'))
