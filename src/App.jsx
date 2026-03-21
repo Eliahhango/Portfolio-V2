@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HtmlMirror from './pages/HtmlMirror'
-import NotFound from './pages/NotFound'
+import HtmlPathMirror from './pages/HtmlPathMirror'
 
 const htmlRoutes = [
   // Root pages
@@ -86,7 +86,7 @@ function App() {
         {htmlRoutes.map((route) => (
           <Route key={route.path} path={route.path} element={<HtmlMirror src={route.src} />} />
         ))}
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<HtmlPathMirror />} />
       </Routes>
     </Router>
   )
