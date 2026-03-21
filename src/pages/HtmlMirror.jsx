@@ -49,14 +49,16 @@ const HtmlMirror = ({ src }) => {
 
       .ezw-reveal {
         opacity: 0;
-        transform: translateY(28px);
-        transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transform: translateY(20px);
+        filter: blur(2px);
+        transition: opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1), transform 0.72s cubic-bezier(0.22, 1, 0.36, 1), filter 0.72s cubic-bezier(0.22, 1, 0.36, 1);
         will-change: opacity, transform;
       }
 
       .ezw-reveal.ezw-in-view {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0);
       }
 
       .ezw-slide-left {
@@ -85,8 +87,8 @@ const HtmlMirror = ({ src }) => {
       .ezw-char {
         display: inline-block;
         opacity: 0;
-        transform: translateY(14px) scale(0.98);
-        animation: ezw-char-reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        transform: translateY(12px) scale(0.985);
+        animation: ezw-char-reveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         animation-play-state: paused;
       }
 
@@ -114,7 +116,7 @@ const HtmlMirror = ({ src }) => {
       @keyframes ezw-char-reveal {
         0% {
           opacity: 0;
-          transform: translateY(14px) scale(0.98);
+          transform: translateY(12px) scale(0.985);
           filter: blur(2px);
         }
         100% {
@@ -168,6 +170,9 @@ const HtmlMirror = ({ src }) => {
 
     const heroHeading = Array.from(doc.querySelectorAll('h1')).find((node) => /i\s*am\s*elitechwiz/i.test(node.textContent || ''))
     if (heroHeading && !doc.getElementById('ezw-type-line')) {
+      const removable = Array.from(heroHeading.querySelectorAll('span')).find((node) => /creative\s*designer/i.test(node.textContent || ''))
+      if (removable) removable.remove()
+
       const typeLine = doc.createElement('span')
       typeLine.id = 'ezw-type-line'
       typeLine.className = 'ezw-type-line'
@@ -182,7 +187,7 @@ const HtmlMirror = ({ src }) => {
       typeLine.appendChild(cursor)
       heroHeading.appendChild(typeLine)
 
-      const words = ['A Cybersecurity Expert', 'A Creative Designer', 'A Software Architect']
+      const words = ['A Cybersecurity Expert', 'A Software Architect', 'A Visionary Technologist']
       let wordIndex = 0
       let charIndex = 0
       let deleting = false
@@ -197,7 +202,7 @@ const HtmlMirror = ({ src }) => {
             win.setTimeout(typeStep, 1050)
             return
           }
-          win.setTimeout(typeStep, 55)
+          win.setTimeout(typeStep, 48)
           return
         }
 
@@ -207,7 +212,7 @@ const HtmlMirror = ({ src }) => {
           deleting = false
           wordIndex = (wordIndex + 1) % words.length
         }
-        win.setTimeout(typeStep, deleting ? 30 : 85)
+        win.setTimeout(typeStep, deleting ? 24 : 80)
       }
 
       const win = iframe.contentWindow
@@ -373,18 +378,21 @@ const HtmlMirror = ({ src }) => {
       node.style.transitionDelay = `${Math.min(index * 70, 350)}ms`
     })
 
-    const textNodes = Array.from(doc.querySelectorAll('h1, h2, h3, p'))
+    const textNodes = Array.from(doc.querySelectorAll('h1, h2, h3, h4, p, li, a, button'))
     textNodes.forEach((node, index) => {
+      if (node.classList.contains('material-symbols-outlined')) return
+      if ((node.textContent || '').trim().length < 2) return
       node.classList.add('ezw-reveal')
-      node.style.transitionDelay = `${Math.min((index % 8) * 55, 300)}ms`
+      node.style.transitionDelay = `${Math.min((index % 10) * 42, 260)}ms`
     })
 
-    const headlineNodes = Array.from(doc.querySelectorAll('h1, h2'))
+    const headlineNodes = Array.from(doc.querySelectorAll('h1, h2, h3'))
     headlineNodes.forEach((node) => {
       if (node.dataset.ezwSplit === '1') return
       if (node.children.length > 0) return
       const text = node.textContent || ''
       if (!text.trim()) return
+      if (text.trim().length > 58) return
 
       node.dataset.ezwSplit = '1'
       node.textContent = ''
@@ -402,7 +410,7 @@ const HtmlMirror = ({ src }) => {
         const span = doc.createElement('span')
         span.className = 'ezw-char'
         span.textContent = char
-        span.style.animationDelay = `${Math.min(charDelay * 26, 900)}ms`
+        span.style.animationDelay = `${Math.min(charDelay * 20, 760)}ms`
         node.appendChild(span)
         charDelay += 1
       }
