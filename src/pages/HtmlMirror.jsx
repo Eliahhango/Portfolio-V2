@@ -95,6 +95,22 @@ const HtmlMirror = ({ src }) => {
         width: 0.32em;
       }
 
+      .ezw-type-line {
+        display: block;
+        margin-top: 0.35rem;
+        font-weight: 700;
+        font-size: clamp(1rem, 2.6vw, 1.35rem);
+        letter-spacing: -0.01em;
+        color: #0066ff;
+        min-height: 1.35em;
+      }
+
+      .ezw-type-cursor {
+        display: inline-block;
+        margin-left: 1px;
+        animation: ezw-caret 0.85s steps(1, end) infinite;
+      }
+
       @keyframes ezw-char-reveal {
         0% {
           opacity: 0;
@@ -105,6 +121,15 @@ const HtmlMirror = ({ src }) => {
           opacity: 1;
           transform: translateY(0) scale(1);
           filter: blur(0);
+        }
+      }
+
+      @keyframes ezw-caret {
+        0%, 49% {
+          opacity: 1;
+        }
+        50%, 100% {
+          opacity: 0;
         }
       }
 
@@ -125,6 +150,69 @@ const HtmlMirror = ({ src }) => {
       }
     `
     doc.head.appendChild(style)
+
+    const eliteProfileImage = 'https://files.catbox.moe/qgbtyt.png'
+
+    const imageCandidates = Array.from(
+      doc.querySelectorAll('img[alt*="EliTechWiz" i], img[alt*="Profile" i], img[src*="googleusercontent" i], img[src*="pexels" i]')
+    )
+    if (imageCandidates.length > 0) {
+      const preferred = imageCandidates.find((img) => img.alt && /eli|profile/i.test(img.alt)) || imageCandidates[0]
+      preferred.src = eliteProfileImage
+      preferred.alt = 'EliTechWiz'
+      preferred.loading = 'eager'
+      preferred.decoding = 'async'
+      preferred.style.objectFit = 'cover'
+      preferred.style.objectPosition = 'center'
+    }
+
+    const heroHeading = Array.from(doc.querySelectorAll('h1')).find((node) => /i\s*am\s*elitechwiz/i.test(node.textContent || ''))
+    if (heroHeading && !doc.getElementById('ezw-type-line')) {
+      const typeLine = doc.createElement('span')
+      typeLine.id = 'ezw-type-line'
+      typeLine.className = 'ezw-type-line'
+
+      const typeText = doc.createElement('span')
+      typeText.id = 'ezw-type-text'
+      const cursor = doc.createElement('span')
+      cursor.className = 'ezw-type-cursor'
+      cursor.textContent = '|'
+
+      typeLine.appendChild(typeText)
+      typeLine.appendChild(cursor)
+      heroHeading.appendChild(typeLine)
+
+      const words = ['A Cybersecurity Expert', 'A Creative Designer', 'A Software Architect']
+      let wordIndex = 0
+      let charIndex = 0
+      let deleting = false
+
+      const typeStep = () => {
+        const target = words[wordIndex]
+        if (!deleting) {
+          charIndex += 1
+          typeText.textContent = target.slice(0, charIndex)
+          if (charIndex >= target.length) {
+            deleting = true
+            win.setTimeout(typeStep, 1050)
+            return
+          }
+          win.setTimeout(typeStep, 55)
+          return
+        }
+
+        charIndex -= 1
+        typeText.textContent = target.slice(0, Math.max(0, charIndex))
+        if (charIndex <= 0) {
+          deleting = false
+          wordIndex = (wordIndex + 1) % words.length
+        }
+        win.setTimeout(typeStep, deleting ? 30 : 85)
+      }
+
+      const win = iframe.contentWindow
+      win.setTimeout(typeStep, 260)
+    }
 
     const canvas = doc.createElement('canvas')
     canvas.id = 'ezw-network-canvas'
