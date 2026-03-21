@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Content Editor | Atelier Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e5eeff",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-background": "#0b1c30",
+              "inverse-surface": "#213145",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#00201d",
+              "error-container": "#ffdad6",
+              "tertiary": "#6e26df",
+              "surface-variant": "#d3e4fe",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary-fixed": "#001849",
+              "outline": "#727687",
+              "on-primary-fixed-variant": "#003fa4",
+              "on-primary-container": "#f8f7ff",
+              "on-surface": "#0b1c30",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-low": "#eff4ff",
+              "surface-dim": "#cbdbf5",
+              "inverse-on-surface": "#eaf1ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#424656",
+              "tertiary-container": "#8848f9",
+              "primary-fixed": "#dae1ff",
+              "primary": "#0050cb",
+              "secondary": "#006a61",
+              "on-tertiary-container": "#fdf6ff",
+              "on-error": "#ffffff",
+              "surface-bright": "#f8f9ff",
+              "surface-tint": "#0054d6",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-secondary-container": "#006f66",
+              "background": "#f8f9ff",
+              "tertiary-fixed": "#eaddff",
+              "surface": "#f8f9ff",
+              "outline-variant": "#c2c6d8",
+              "error": "#ba1a1a",
+              "secondary-container": "#86f2e4",
+              "primary-container": "#0066ff",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#b3c5ff",
+              "on-tertiary-fixed": "#25005a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editor-min-h { min-height: 500px; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased overflow-x-clip">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 h-screen w-64 border-r border-[#c2c6d8]/15 bg-[#f8f9ff] z-50">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold tracking-tighter text-[#0066FF] font-headline">Atelier Admin</h1>
+<p class="text-xs text-slate-500 font-medium">Portfolio Control</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-colors rounded-lg group" href="admin_dashboard.html">Dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-colors rounded-lg group" href="/admin/manage_projects.html">
+<span class="material-symbols-outlined">work</span>
+<span class="font-medium text-sm">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0066FF] bg-[#eff4ff] rounded-lg font-bold" href="/blog/single_blog_post.html">
+<span class="material-symbols-outlined">article</span>
+<span class="text-sm">Blog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-colors rounded-lg group" href="/admin/admin_dashboard.html">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="font-medium text-sm">Services</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-colors rounded-lg group" href="/admin/admin_dashboard.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 px-5 rounded-full font-bold shadow-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="text-sm">New Project</span>
+</button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a male admin user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68r3L929zEbTeH87TcVE0FPKX-m1obZhx9CNZPgfFGBopgCcJDAKezG8qImx8y8Dk27ND5klIMe2m_CmKuqxqLA_kaLF8UCpEU7oRFv6XHfry13U7QWC9OT0hdn83vjUTItWbJAnsLi8dilNRrGUbXvjlBjAw9PWPj5FlpLJz_mEZXe7AWVH_8FE5hNRyhQNTx8JJRoeyEEmAhWB0M_DJadsj5qLQLrpYyZXsf5Jdsy_GETxpZDaUFoQ7jv0YgGkiAklDT-2CVns"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold">Alex Rivera</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Lead Editor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-[1400px] mx-auto p-6 md:p-12">
+<div class="flex gap-6 md:gap-12 items-start">
+<!-- Editor Canvas -->
+<div class="flex-1 space-y-8">
+<!-- Header Section -->
+<section class="bg-surface-container-lowest p-6 md:p-10 rounded-xl shadow-sm space-y-6">
+<input class="w-full text-4xl md:text-5xl font-headline font-extrabold tracking-tight border-none focus:ring-0 placeholder:text-surface-variant text-on-background p-0" placeholder="Post Title" type="text" value="Modern Minimalism in Digital Product Design"/>
+<div class="flex gap-4 items-center">
+<div class="px-4 py-2 bg-secondary-container/30 text-on-secondary-container rounded-full text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">category</span>
+                                Case Study
+                            </div>
+<div class="px-4 py-2 bg-surface-container text-primary rounded-full text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">timer</span>
+                                8 min read
+                            </div>
+</div>
+</section>
+<!-- Featured Image -->
+<section class="relative group overflow-hidden rounded-xl bg-surface-container-low aspect-[21/9] flex items-center justify-center border-2 border-dashed border-outline-variant/30 hover:border-primary/50 transition-colors">
+<img alt="Featured blog post image" class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="Sleek workspace with a laptop and coffee showing high-end tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS3nDZPthRt1Oy6xpGwdhIxk2rSS80wZW1cuwinvqqcWL9NX3bPRjh43aYiUfAAaq2oT5s7k1fVWq5PtwXnjTo6pNVA1g65zRY6aSZqCSduI-m8E7rezmlBTFpVzYqlUIkny9xXFoMIDHgiGvG8Lp97ehdrKkYWXj9v-9z8pDTBxsGWjTYx6s_f9gnfq8eKXCj0Bjzw2J-YzhWfkvelS-lzQfNI2hc8k99BKO6OGYuLvotKEYQEePnZV13fsuSPdhoSUZ6b2-1g1M"/>
+<div class="relative z-10 text-center space-y-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl text-primary">image</span>
+<p class="text-sm font-bold text-primary">Change Featured Image</p>
+<p class="text-xs text-slate-500">Recommended size: 1600x900px</p>
+</div>
+</section>
+<!-- Editor Toolbar & Content -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="bg-surface-container-low border-b border-outline-variant/15 px-6 py-3 flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">format_bold</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">format_italic</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant/30"></div>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">link</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">code</span>
+</button>
+<div class="flex-1"></div>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+<div class="p-6 md:p-10 editor-min-h prose max-w-none focus:outline-none text-on-surface-variant leading-relaxed text-lg">
+<p>The essence of modern minimalism lies not in the absence of content, but in the clarity of its purpose. When we strip away the superfluous, we reveal the core intent of the user experience.</p>
+<p>In this article, we explore how Atelier Admin utilizes tonal transitions instead of borders to create a hierarchy of focus...</p>
+</div>
+</section>
+</div>
+<!-- Sidebar Settings -->
+<aside class="w-80 space-y-6 sticky top-24">
+<!-- Publishing Settings -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-5">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Status &amp; Visibility</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-slate-600">Status</span>
+<span class="text-sm font-bold text-secondary flex items-center gap-1">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                                    Draft
+                                </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-slate-600">Visibility</span>
+<span class="text-sm font-bold text-on-surface">Public</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-slate-600">Publish Date</span>
+<button class="text-sm font-bold text-primary flex items-center gap-1">
+                                    Immediately
+                                    <span class="material-symbols-outlined text-xs">edit</span>
+</button>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/15 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-on-surface py-2 rounded-lg text-sm font-bold hover:bg-surface-variant transition-colors">
+                                Preview
+                            </button>
+<button class="flex-1 bg-white border border-outline-variant/20 text-on-surface py-2 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors">
+                                Save Draft
+                            </button>
+</div>
+</div>
+<!-- SEO Metadata -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-5">
+<div class="flex justify-between items-center">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">SEO Settings</h3>
+<span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase">Slug</label>
+<input class="w-full bg-white border-outline-variant/20 rounded-lg text-sm py-2 px-3 focus:border-primary focus:ring-0 transition-colors" type="text" value="modern-minimalism-digital-design"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase">Meta Description</label>
+<textarea class="w-full bg-white border-outline-variant/20 rounded-lg text-sm py-2 px-3 focus:border-primary focus:ring-0 transition-colors" rows="3">Learn how to apply architectural minimalist principles to modern UI design for high-end digital products.</textarea>
+</div>
+</div>
+</div>
+<!-- Categories & Tags -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-5">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Organization</h3>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase">Category</label>
+<select class="w-full bg-white border-outline-variant/20 rounded-lg text-sm py-2 px-3 focus:border-primary focus:ring-0">
+<option>Case Study</option>
+<option>Design Trends</option>
+<option>Tutorial</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase">Tags</label>
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="bg-surface-container-highest px-2 py-1 rounded-md text-[10px] font-bold text-on-surface-variant flex items-center gap-1">
+                                        UI DESIGN <span class="material-symbols-outlined text-[10px] cursor-pointer">close</span>
+</span>
+<span class="bg-surface-container-highest px-2 py-1 rounded-md text-[10px] font-bold text-on-surface-variant flex items-center gap-1">
+                                        MINIMALISM <span class="material-symbols-outlined text-[10px] cursor-pointer">close</span>
+</span>
+</div>
+<input class="w-full bg-white border-outline-variant/20 rounded-lg text-sm py-2 px-3 focus:border-primary focus:ring-0" placeholder="Add tag..." type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 text-error font-bold text-xs py-2 hover:bg-error-container/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+                        Move to Trash
+                    </button>
+</aside>
+</div>
+</div>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

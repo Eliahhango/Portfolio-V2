@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EliTechWiz - Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#0066ff",
+              "error-container": "#ffdad6",
+              "surface-container": "#e5eeff",
+              "surface-bright": "#f8f9ff",
+              "secondary-container": "#86f2e4",
+              "inverse-on-surface": "#eaf1ff",
+              "on-surface-variant": "#424656",
+              "inverse-surface": "#213145",
+              "on-background": "#0b1c30",
+              "surface-container-low": "#eff4ff",
+              "background": "#f8f9ff",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#001849",
+              "on-primary": "#ffffff",
+              "surface-dim": "#cbdbf5",
+              "error": "#ba1a1a",
+              "surface-tint": "#0054d6",
+              "primary-fixed": "#dae1ff",
+              "primary": "#0050cb",
+              "inverse-primary": "#b3c5ff",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-highest": "#d3e4fe",
+              "surface-container-high": "#dce9ff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#25005a",
+              "on-secondary-fixed": "#00201d",
+              "tertiary-fixed": "#eaddff",
+              "secondary-fixed": "#89f5e7",
+              "on-secondary-container": "#006f66",
+              "outline": "#727687",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-surface": "#0b1c30",
+              "on-primary-fixed-variant": "#003fa4",
+              "tertiary": "#6e26df",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface": "#f8f9ff",
+              "outline-variant": "#c2c6d8",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-tertiary-container": "#fdf6ff",
+              "tertiary-container": "#8848f9",
+              "on-tertiary": "#ffffff",
+              "secondary": "#006a61",
+              "on-primary-container": "#f8f7ff",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-fixed-variant": "#005049"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-clip">
+<!-- Top Navigation Bar -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-24 pb-12 min-h-screen">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Personalized Welcome Section -->
+
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<span class="text-secondary font-bold text-sm">+2 this week</span>
+</div>
+<h3 class="text-3xl font-bold font-headline">24</h3>
+<p class="text-on-surface-variant text-sm font-medium">Completed Modules</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">timer</span>
+<span class="text-primary-container font-bold text-sm">Active</span>
+</div>
+<h3 class="text-3xl font-bold font-headline">12h 45m</h3>
+<p class="text-on-surface-variant text-sm font-medium">Learning Time (Monthly)</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">star</span>
+<span class="text-tertiary font-bold text-sm">Elite</span>
+</div>
+<h3 class="text-3xl font-bold font-headline">1,420</h3>
+<p class="text-on-surface-variant text-sm font-medium">Knowledge Points</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+<span class="text-secondary font-bold text-sm">Active</span>
+</div>
+<h3 class="text-3xl font-bold font-headline">01</h3>
+<p class="text-on-surface-variant text-sm font-medium">Active Subscriptions</p>
+</div>
+</div>
+<!-- Bento Grid Layout for Dashboard Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- My Courses/Resources - Primary Focus -->
+<section class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-2xl font-bold font-headline tracking-tight">My Courses &amp; Resources</h2>
+<button class="text-primary font-semibold text-sm hover:underline underline-offset-4">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10 group">
+<div class="h-40 bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern abstract tech illustration for UI course" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYaubDY-BuHrekGLeq2rgL-uksdNabMFxzWct7_N3IQbTDpNMF-mzxdFzHhZxjcP4wEa3Vwh97EwrI5K--NmO4-cjsKSZ4rODxi_F3DLBbVdo7-DzZjacR_iCy9d3B5KUYLMIJvqnP9xm-WS0yGSKefhNYe7PMbAhkvgWkjwJT58yoIiMc3W2VnygyZPd3MOMMShQFNnvD0GkOQVKgd8uo9Sy58jtlGdUC1u3sdnQHE2reSToYO3XxfU2dU6KOGv8eqB5iwOnQJU8"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary px-3 py-1 rounded-full text-white text-[10px] font-bold uppercase tracking-widest">Advanced</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline font-bold text-lg mb-2">Architectural UI Foundations</h4>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex-1 h-1.5 bg-surface-container-low rounded-full">
+<div class="w-[85%] h-full bg-primary rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">85%</span>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-bold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2" onclick="window.location.href='/blog/latest_insights.html'">
+                                    Continue Learning
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10 group">
+<div class="h-40 bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Cybersecurity and digital protection abstract art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbyRdbJaAdfv1NZr6atDOQvkV5yq7spnz0UC6dzwpdEQFgwxSfnn9XACpFN3hBtREva2o4qFywWjubKBiM64a304ts3v-6940BELjm6Q1Uptto7HzYzGDTblDdbgfBCQOsRII4yWhD2VkB-5ACxuwMoBRH62JQLcUMK2Hc_asoYrwlbCslkpgPKYpBAsSjMYKOMBm3UbueapZArssDqlVcK7ARC-Ze72PNkA45w1e2VXlz6IpRadsHHsBEPh8cRszowCxg2iVscmI"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary px-3 py-1 rounded-full text-white text-[10px] font-bold uppercase tracking-widest">Specialist</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline font-bold text-lg mb-2">Systems Security &amp; Encryption</h4>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex-1 h-1.5 bg-surface-container-low rounded-full">
+<div class="w-[42%] h-full bg-primary rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">42%</span>
+</div>
+<button class="w-full py-3 bg-surface-container-high text-primary rounded-full font-bold text-sm hover:bg-surface-container-lowest border border-primary/10 transition-all flex items-center justify-center gap-2">
+                                    Resume Session
+                                    <span class="material-symbols-outlined text-sm">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recommended For You -->
+<div class="pt-8">
+<h2 class="text-2xl font-bold font-headline tracking-tight mb-6">Recommended for You</h2>
+<div class="bg-gradient-to-br from-primary to-primary-container p-1 rounded-2xl">
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row items-center gap-8">
+<div class="w-full md:w-48 h-32 rounded-lg bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="3D abstract design for recommended course" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkvbWvQ9FOtnBozWmMQE7GPQHwHFGGXToVcgPV_Jdzy6nnuhAC911ZUfElSoyWu-m92b5UVT-NeaBpVd2HiESiW__qrI4MquCpu6eOAmlMFLG65X0sAgprQ-sNQNY_2_bxq22fVwBYT3N8CAn0-7lNpJ9y6Fu6MYIoul4EaQE2yb5tqX5o5LuQPjgnZ7DjfHnSt3ifD8U53VI3iAbxzbfijCjeAryQXV73s0TfymODbTZ2qY07TjpJXmVT88XtnBvhnLlrVS_FVrU"/>
+</div>
+<div class="flex-1">
+<span class="text-secondary font-bold text-xs uppercase tracking-widest mb-2 block">New Course Release</span>
+<h3 class="text-xl font-bold font-headline mb-2">Mastering React Server Components</h3>
+<p class="text-on-surface-variant text-sm mb-4">Advance your web architecture skills with this deep dive into RSCs and the future of Next.js.</p>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-bold text-sm hover:shadow-lg transition-shadow">Explore Module</button>
+<button class="p-2 text-primary hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Content: Recent Activity & Notifications -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/10">
+<h3 class="text-lg font-bold font-headline mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                            Recent Activity
+                        </h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<div class="absolute top-10 left-5 w-0.5 h-full bg-outline-variant/20 -translate-x-1/2"></div>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Completed "Bento Grid Layouts"</p>
+<p class="text-xs text-on-surface-variant mt-1">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">forum</span>
+</div>
+<div class="absolute top-10 left-5 w-0.5 h-full bg-outline-variant/20 -translate-x-1/2"></div>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Commented on "Glassmorphism Guide"</p>
+<p class="text-xs text-on-surface-variant mt-1">Yesterday</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-xl">emoji_events</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Earned "Quick Learner" Badge</p>
+<p class="text-xs text-on-surface-variant mt-1">3 days ago</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-2 text-sm font-bold text-on-surface-variant hover:text-primary transition-colors">See full history</button>
+</div>
+<!-- Upcoming Deadlines / Schedule -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0px_10px_30px_rgba(11,28,48,0.04)] border border-outline-variant/10">
+<h3 class="text-lg font-bold font-headline mb-4">Your Schedule</h3>
+<div class="p-4 bg-surface-container-low rounded-xl mb-4 border-l-4 border-primary">
+<p class="text-xs font-bold text-primary uppercase mb-1">Live Q&amp;A Session</p>
+<p class="text-sm font-bold text-on-surface">Advanced Framer Motion</p>
+<p class="text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+                                Tomorrow, 3:00 PM
+                            </p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<p class="text-xs font-bold text-secondary uppercase mb-1">Project Milestone</p>
+<p class="text-sm font-bold text-on-surface">Final Portfolio Submission</p>
+<p class="text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+                                Oct 15th, 11:59 PM
+                            </p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+<!-- Floating Action Button - Mobile Only contextually for Adding Activity -->
+<div class="md:hidden fixed bottom-6 right-6">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+
+

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Latest Insights | EliTechWiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "primary": "#0050cb",
+                        "on-primary-fixed": "#001849",
+                        "primary-fixed": "#dae1ff",
+                        "secondary": "#006a61",
+                        "on-surface": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#fdf6ff",
+                        "inverse-primary": "#b3c5ff",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005049",
+                        "primary-container": "#0066ff",
+                        "inverse-surface": "#213145",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#f8f7ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-tint": "#0054d6",
+                        "tertiary-fixed": "#eaddff",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "tertiary": "#6e26df",
+                        "surface-container-low": "#eff4ff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-container": "#86f2e4",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-container": "#8848f9",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-surface-variant": "#424656",
+                        "on-tertiary-fixed": "#25005a",
+                        "on-secondary-fixed": "#00201d",
+                        "on-tertiary-fixed-variant": "#5a00c6",
+                        "on-secondary-container": "#006f66",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#89f5e7",
+                        "outline-variant": "#c2c6d8",
+                        "outline": "#727687",
+                        "tertiary-fixed-dim": "#d2bbff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-transition {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-clip">
+<!-- Top Navigation Bar -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+
+<!-- Filter Chips Section -->
+<div class="flex flex-wrap gap-3 mb-16 items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-outline mr-2">Filter by</span>
+<button class="px-6 py-2.5 rounded-full bg-secondary text-on-secondary font-headline text-sm font-bold shadow-md">All</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-headline text-sm font-medium">Cybersecurity</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-headline text-sm font-medium">Development</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-headline text-sm font-medium">Design</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-headline text-sm font-medium">Innovation</button>
+</div>
+<!-- Featured / Top Post (Asymmetric Entry) -->
+<article class="relative group mb-24 overflow-hidden rounded-[2rem] bg-surface-container-low grid md:grid-cols-2 gap-0 items-stretch">
+<div class="relative h-[400px] md:h-auto overflow-hidden">
+<img alt="Cybersecurity matrix code" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Digital encryption patterns in neon blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOLzq21VIisZ-vlaATnWnAjjlAxjD-dXRBCWz7A2XszX0iOFxuHDkyetgdBjUuMwCZw5LPmz97CaMABH-gLlNEg9AVt9_IKs4meRtpCrdg8XDi7sCxQH6sWt5I4OXNxxwtgeeJTDBjmyDe2K66es2_hiv0knxWktaDJ0zjgrCs9fcLJ5W5WcTnlKq9bEL2e65pkZ63CCT-1YKY-u_22a-bvtvGmAUq4E9KUheePCdKi_NdVTc9I-WaRJr76-MF0Vh9-N35F8OSUYI"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div class="p-6 md:p-12 md:p-16 flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-6">
+<span class="px-3 py-1 rounded-full bg-secondary text-white text-[10px] font-bold tracking-widest uppercase">Cybersecurity</span>
+<span class="text-sm text-outline font-medium">May 14, 2024</span>
+</div>
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight mb-6 group-hover:text-primary transition-colors">
+                    The Zero Trust Architecture: Elevating Digital Sovereignty
+                </h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                    In an era of borderless networks, we dissect why identity-based security is the new perimeter for elite technical environments.
+                </p>
+<div class="flex items-center gap-2 text-primary font-bold group-hover:translate-x-2 transition-transform">
+<span>Read Full Story</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Bento Grid Articles -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<article class="flex flex-col group">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative">
+<img alt="UX Design layout" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist modern mobile application interface design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiXQearZ5NwuYacL3jp-GIB3GCCdyzGxQEFDAWN5Wy2SRodEfjMLCuSuA4VyMvIL_w3UYwntjA_yYRR_V9naeDVvZsaBAAMmtz_alGBoQtttJMwBc7C5rPBB6r3YPvbzlbrFDN9EBsp0kfDyH8THoBgtw7jDRQg96QKhwBOjwPBiJ_Ks4Yd1fa2Xa-7-vTPVgASZ9B6gtVqBkzei98JJeQzF3OI1Y7n5NPKEFbdjcwyGOF4vdLqY4J8uSIRGrQWQ9lbAAR-i-_jNE"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-sm">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-wider">Design</span>
+</div>
+</div>
+<div class="px-2">
+<span class="text-xs text-outline font-medium block mb-3">April 28, 2024</span>
+<h3 class="font-headline text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                        Psychology of Motion in High-End UI
+                    </h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-3">
+                        How subtle easing curves and spatial consistency transform a functional tool into a premium digital experience.
+                    </p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all" href="/blog/single_blog_post.html">
+                        Read More <span class="material-symbols-outlined text-xs">north_east</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col group">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative">
+<img alt="Clean code on screen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Technical code snippets on a dark development IDE" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn7-9SUHikLQJivagQGwLUMRicU7GygPwd4Wq3nrEAoDTgxUns1_YI9JDpntUb4J91VhsQMvnKvtdNrYPo6XTIKWU_T__P5MJR9tYHKMcUFlvERpR2Cl1iqy8DWzZ8GVvzMop4zK0zpHREajwjast029nE53j-pCGbPMwEv23EfTh8O_dCVifZcP8TT1u4TAQGjdtzcB5BYg14KG6AeaIJZZw0bLwF_uSlwtF12oKDu0BqpHNgkKkqILnFCG-otU70qBzHV3CYpWw"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-sm">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-wider">Development</span>
+</div>
+</div>
+<div class="px-2">
+<span class="text-xs text-outline font-medium block mb-3">April 12, 2024</span>
+<h3 class="font-headline text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                        Sustainable Code: The Green Technical Stack
+                    </h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-3">
+                        Optimizing computation efficiency not just for speed, but for environmental sustainability in the cloud era.
+                    </p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all" href="/blog/single_blog_post.html">
+                        Read More <span class="material-symbols-outlined text-xs">north_east</span>
+</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col group">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative">
+<img alt="AI concept art" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Abstract neural network representation with blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZj1MXEwjgA11XdaK_2d5bF0rRsZ1UJl9coa77R82SuHAGhl4Xx7T0BqLiD7ftd8vralYmWvOr4PTPK2gRVQnUgM-5cvLu6YbF0P__sE93WQypBN3DWta7y9bob7sl3R1H4V-MzNPfR5_X1ZGULk-wOGTOJlLR7DohIFMB20slwdWZbQiJ4OcbvqQsPd4vjbwnCQreoyMiinXDlCFZu4mRZAlB7z2kxcrTazyGoQzqDUyPSLKYDOcqRyyW6V6nf022HBFziFCMnKE"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-sm">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-wider">Innovation</span>
+</div>
+</div>
+<div class="px-2">
+<span class="text-xs text-outline font-medium block mb-3">March 30, 2024</span>
+<h3 class="font-headline text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                        LLMs as Creative Co-Architects
+                    </h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-3">
+                        Shifting the narrative from replacement to refinement—how elite engineers use AI to scale complex problem-solving.
+                    </p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:gap-3 transition-all" href="/blog/single_blog_post.html">
+                        Read More <span class="material-symbols-outlined text-xs">north_east</span>
+</a>
+</div>
+</article>
+<!-- Card 4 (Featured Span) -->
+<article class="md:col-span-2 relative group overflow-hidden rounded-[2rem] bg-surface-container-low min-h-[400px]">
+<div class="absolute inset-0">
+<img alt="Global network" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Digital globe visualization with interconnected nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJlFxhSX11J-5eW2dlGQhlFUOL4GrSDkpwtuRxZ5tz7QuIR8E9dmKEKB0Tp0x-lv5rGxHZ1tR2C_VrzGCycL19M6y_J8QsJam0UJFbslfAb-e48iQGyLDpi255jboOnsOkx5GJUWfrz2MWST6lJ7XzLyB3MeZPs_22oZe7isBE4T2f5uZyHtpGjCTxE3u38o_VVkzllZGmhpUC0Box_AoBWxgvD1z64rO_V-4WPfSS5KVw3qyZlWCbKa_55zx30SxMRDQnSIBWcCE"/>
+<div class="absolute inset-0 bg-on-surface/40 group-hover:bg-on-surface/30 transition-colors"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end p-6 md:p-12 text-white">
+<div class="flex items-center gap-4 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold tracking-widest uppercase">Deep Dive</span>
+<span class="text-sm text-white/70">March 15, 2024</span>
+</div>
+<h3 class="font-headline text-3xl font-extrabold tracking-tight mb-4 max-w-lg">
+                        Edge Computing: Decoupling the Monolith
+                    </h3>
+<p class="text-white/80 max-w-md mb-6 leading-relaxed">
+                        A technical blueprint for deploying low-latency infrastructure at the global edge.
+                    </p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:gap-4 transition-all" href="/services/methodology.html">
+                        Explore Methodology <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<!-- Card 5 (Small Accent) -->
+<article class="bg-primary-container/20 rounded-[2rem] p-6 md:p-10 flex flex-col justify-center border border-primary/5">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined">rss_feed</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Stay Ahead of the Curve</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                    Subscribe to the Atelier Newsletter for monthly deep-dives into elite engineering and design.
+                </p>
+<div class="space-y-3">
+<input class="w-full bg-white border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary shadow-sm" placeholder="Your email address" type="email"/>
+<button class="w-full bg-primary text-white font-headline font-bold py-3 rounded-xl hover:bg-primary-container transition-colors shadow-lg shadow-primary/20" onclick="window.location.href='/auth/user_registration.html'">
+                        Join the Elite
+                    </button>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex items-center justify-center gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="text-sm font-headline font-bold">1 <span class="text-outline mx-2">of</span> 12</span>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

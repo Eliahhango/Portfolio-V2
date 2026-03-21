@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Admin - Portfolio Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e5eeff",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-background": "#0b1c30",
+              "inverse-surface": "#213145",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#00201d",
+              "error-container": "#ffdad6",
+              "tertiary": "#6e26df",
+              "surface-variant": "#d3e4fe",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary-fixed": "#001849",
+              "outline": "#727687",
+              "on-primary-fixed-variant": "#003fa4",
+              "on-primary-container": "#f8f7ff",
+              "on-surface": "#0b1c30",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-low": "#eff4ff",
+              "surface-dim": "#cbdbf5",
+              "inverse-on-surface": "#eaf1ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#424656",
+              "tertiary-container": "#8848f9",
+              "primary-fixed": "#dae1ff",
+              "primary": "#0050cb",
+              "secondary": "#006a61",
+              "on-tertiary-container": "#fdf6ff",
+              "on-error": "#ffffff",
+              "surface-bright": "#f8f9ff",
+              "surface-tint": "#0054d6",
+              "surface-container-high": "#dce9ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-secondary-container": "#006f66",
+              "background": "#f8f9ff",
+              "tertiary-fixed": "#eaddff",
+              "surface": "#f8f9ff",
+              "outline-variant": "#c2c6d8",
+              "error": "#ba1a1a",
+              "secondary-container": "#86f2e4",
+              "primary-container": "#0066ff",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#b3c5ff",
+              "on-tertiary-fixed": "#25005a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased overflow-x-clip">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#f8f9ff] dark:bg-slate-950 border-r border-[#c2c6d8]/15 flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold tracking-tighter text-[#0066FF] dark:text-blue-400 font-headline">Atelier Admin</h1>
+<p class="text-xs text-slate-500 font-medium mt-1">Portfolio Control</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#eff4ff] dark:hover:bg-blue-900/10 hover:text-[#0066FF] transition-all duration-200 ease-in-out hover:translate-x-1 font-manrope text-sm font-medium tracking-tight rounded-lg" href="admin_dashboard.html">Dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0066FF] dark:text-blue-400 bg-[#eff4ff] dark:bg-blue-900/20 rounded-lg font-bold font-manrope text-sm tracking-tight transition-all duration-200 ease-in-out hover:translate-x-1" href="/admin/manage_projects.html">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+                Projects
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#eff4ff] dark:hover:bg-blue-900/10 hover:text-[#0066FF] transition-all duration-200 ease-in-out hover:translate-x-1 font-manrope text-sm font-medium tracking-tight rounded-lg" href="/blog/single_blog_post.html">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+                Blog
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#eff4ff] dark:hover:bg-blue-900/10 hover:text-[#0066FF] transition-all duration-200 ease-in-out hover:translate-x-1 font-manrope text-sm font-medium tracking-tight rounded-lg" href="/admin/admin_dashboard.html">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+                Services
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#eff4ff] dark:hover:bg-blue-900/10 hover:text-[#0066FF] transition-all duration-200 ease-in-out hover:translate-x-1 font-manrope text-sm font-medium tracking-tight rounded-lg" href="/admin/admin_dashboard.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 px-5 rounded-full font-bold shadow-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Project
+            </button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin User Profile" data-alt="Portrait of a smiling professional male designer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg4XPRPs1uNrDzMXWYtSlocOwPu4KuQlV5u-4OaQZMraRGnTsrTRd8ivi6MuqGFUqZP6ZmkWCsLRdKeR-KXIPx9itGffPYhh8hBmH8-y1J--o5mxvUoYUjk_zXss0rG41j0xGgPU9mja8rXL_cZBjNBpDKBri34XA-n-a4NwnbfSLSVNV4cUwJpw_wOQALMDPaEZa4wF6ScSUfgXNzi6ZydpVFqbgvg01gfdkx8ZOGIH8uuuSxjI4THARzG3EAFgi4wYsPZiPujX8"/>
+</div>
+<div>
+<p class="text-sm font-bold">Admin User</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest">Premium Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="p-6 md:p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+<div class="space-y-2">
+<nav class="flex items-center gap-2 text-xs font-label text-secondary mb-4">
+<span class="font-bold">Portfolio</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-outline">Active Projects</span>
+</nav>
+<h2 class="text-4xl font-extrabold tracking-tight font-headline text-on-surface">Manage Projects</h2>
+<p class="text-on-surface-variant max-w-lg">Manage your elite portfolio showcase, curate content for the world to see, and monitor engagement metrics per piece.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex p-1 bg-surface-container-low rounded-xl">
+<button class="p-2 bg-surface-container-lowest shadow-sm rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="view_list">view_list</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add New Project
+                    </button>
+</div>
+</div>
+<!-- List Controls & Filter -->
+<div class="bg-surface-container-low rounded-2xl p-4 mb-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary text-on-secondary rounded-lg font-medium text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                        All Status
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 hover:bg-surface-container-high rounded-lg font-medium text-sm text-on-surface-variant transition-colors">
+                        Date Modified
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+<div class="text-xs font-medium text-outline">
+                    Showing 1-12 of 48 projects
+                </div>
+</div>
+<!-- Projects Grid (Modern Bento/List Hybrid) -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Project Entry: Published -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:shadow-[0px_10px_30px_rgba(11,28,48,0.04)] flex items-center gap-6 border border-transparent hover:border-[#c2c6d8]/15">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="Screenshot of a sleek web dashboard with blue charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB67BWzmQCT5SgOyfDmt4XuEz9g7WIuScU1cJPIISI_Q4m6JtknNXksoqF6ow5DOBwK_Iz68XbJ1X64x9RvDfR6-k5QQ1w21qhcbmSxthu1G-gKcCNruhut24jkSb2MkbedS2JxvByUtSODhkDk6dmUvcAXLVK8EzDMIh0js4oZguPKt_UiiCoND5AQAdH2yzdc35cN5wwNsCFROLJfSKPgiKpVCyazbVnIYOD_15m4JWBgYammUl9kSwhkVH80S-6hwMKlBswlbug"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-bold font-headline group-hover:text-primary transition-colors">Nexus Cloud Platform</h3>
+<span class="px-2.5 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider rounded-full">Published</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Enterprise-grade cloud management interface for SaaS infrastructure.</p>
+<div class="flex items-center gap-6 text-xs text-outline font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                                Modified 2 hours ago
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                1.2k Views
+                            </div>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-3 text-primary bg-surface-container-high rounded-full hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-3 text-error bg-error-container/50 rounded-full hover:bg-error hover:text-on-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Project Entry: Draft -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:shadow-[0px_10px_30px_rgba(11,28,48,0.04)] flex items-center gap-6 border border-transparent hover:border-[#c2c6d8]/15">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="Modern mobile app UI kit design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuHLPmAc81dWCKoUHzFKWL8qGTphLIBVEwuyVX3a9zIZV4NrHsbp0Y18zdkQMJbrM9oTMNh0y1S-mOGNiRJxoXEq0tH1O-wUPWlYiKypZkYGcYy_nf-rwupm_eIXU_jd0G06jjQ6q_s0pW2PRtxdY-hvqRUM_IHtWX8CCQQtCIbtQojJ_yUmd5swREdUkMcfbBpG6OPwO_JkLoEIr8n55dlOhtqDljvEE2ijkSk_BmQnIXePv4E6i58fHJHvEfJmJl5Hok36wl6Uc"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-bold font-headline group-hover:text-primary transition-colors">Aura Mobile App</h3>
+<span class="px-2.5 py-0.5 bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-wider rounded-full">Draft</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Minimalist meditation and wellness application for iOS and Android.</p>
+<div class="flex items-center gap-6 text-xs text-outline font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                                Modified 1 day ago
+                            </div>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-3 text-primary bg-surface-container-high rounded-full hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-3 text-error bg-error-container/50 rounded-full hover:bg-error hover:text-on-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Project Entry: Archived -->
+<div class="group bg-surface-container-lowest opacity-60 rounded-xl p-6 transition-all duration-300 hover:opacity-100 hover:shadow-[0px_10px_30px_rgba(11,28,48,0.04)] flex items-center gap-6 border border-transparent hover:border-[#c2c6d8]/15">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0 grayscale">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="Legacy software interface mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmqIWGdCioOBTLw8pizFb5N9gzxGMBxdepPxHuwUXueIarv-jfLuUXAfQYq4mgZGRj0ECkbvqPkxbK03uxoD8bS4YMBcmP-egxg6PmxqRrHlM9ggejujR-BjzwbAdOPKX-7AlwqXHM8NgCzw0psaD8T1bBs4PLYTmqvKjDbXOFNcdE4JoX9o4HbxgV-33uIsPrxn3rtyMPryoPVVh0_WuMEF3b0_Xw7vTRUlsoe6xjQ8MExHpBCTJy6T9yKtZ71O74nZzzwAsELyE"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-bold font-headline group-hover:text-primary transition-colors">Legacy FinTech Dashboard</h3>
+<span class="px-2.5 py-0.5 bg-outline-variant/30 text-outline text-[10px] font-bold uppercase tracking-wider rounded-full">Archived</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Old iteration of the banking portal developed in 2021.</p>
+<div class="flex items-center gap-6 text-xs text-outline font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                                Modified 3 weeks ago
+                            </div>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-3 text-primary bg-surface-container-high rounded-full hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="restore">restore</span>
+</button>
+<button class="p-3 text-error bg-error-container/50 rounded-full hover:bg-error hover:text-on-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Project Entry: Published (Repeated pattern for visual list) -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:shadow-[0px_10px_30px_rgba(11,28,48,0.04)] flex items-center gap-6 border border-transparent hover:border-[#c2c6d8]/15">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="Abstract colorful data visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxAAOM7IkOdUiAKyleRz6klk7XtfQRMeS-az08-sbI3eQNSvJyohZZExExMy9VJbYDDxzFHVPKIDgFSwxtZL3SqBKjhop76TRXLvrt6L22rimvtr4VYOGYqHs1Qn-RQQFPaV98ZXWthLTVnNI21Pgk7OpjNFnacTJ_raaK8133GILPSXxc9AWGeN1QJ5wp5RSIIUvi0efAv0HVxwrjGKueYaTe3668k8GOS3WGGqcEceyD0EekXrgz7BNT046pcsN7fwpNViTUrek"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-bold font-headline group-hover:text-primary transition-colors">Quant Analytics Hub</h3>
+<span class="px-2.5 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider rounded-full">Published</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Real-time data engine for high-frequency trading visualization.</p>
+<div class="flex items-center gap-6 text-xs text-outline font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                                Modified 2 days ago
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                854 Views
+                            </div>
+</div>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-3 text-primary bg-surface-container-high rounded-full hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-3 text-error bg-error-container/50 rounded-full hover:bg-error hover:text-on-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex items-center justify-between">
+<button class="px-6 py-3 bg-surface-container-high rounded-full font-bold text-sm text-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                    Previous
+                </button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high text-on-surface-variant font-medium text-sm transition-colors">2</button>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high text-on-surface-variant font-medium text-sm transition-colors">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high text-on-surface-variant font-medium text-sm transition-colors">8</button>
+</div>
+<button class="px-6 py-3 bg-surface-container-high rounded-full font-bold text-sm text-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-2">
+                    Next
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Project Quick Preview (Contextual Floating Action) -->
+<div class="fixed bottom-10 right-10 flex flex-col items-end gap-4 z-50">
+<div class="bg-surface-container-lowest shadow-xl rounded-2xl p-4 border border-outline-variant/15 flex items-center gap-4 max-w-xs animate-in slide-in-from-bottom-5">
+<div class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-[10px] text-outline font-bold uppercase tracking-wider">Site Traffic</p>
+<p class="text-sm font-bold text-on-surface">+14% Growth this week</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+
