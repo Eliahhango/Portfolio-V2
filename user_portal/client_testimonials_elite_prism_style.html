@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Testimonials | PRISM Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0050cb",
+              "error": "#ba1a1a",
+              "surface-variant": "#d3e4fe",
+              "surface": "#f8f9ff",
+              "secondary": "#006a61",
+              "on-surface": "#0b1c30",
+              "primary-fixed": "#dae1ff",
+              "on-primary-fixed": "#001849",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-container": "#fdf6ff",
+              "surface-container-highest": "#d3e4fe",
+              "background": "#f8f9ff",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b3c5ff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#0b1c30",
+              "on-secondary-fixed-variant": "#005049",
+              "primary-container": "#0066ff",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e5eeff",
+              "inverse-surface": "#213145",
+              "surface-container-high": "#dce9ff",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#f8f7ff",
+              "surface-tint": "#0054d6",
+              "surface-container-low": "#eff4ff",
+              "on-error": "#ffffff",
+              "tertiary": "#6e26df",
+              "tertiary-fixed": "#eaddff",
+              "on-primary-fixed-variant": "#003fa4",
+              "tertiary-container": "#8848f9",
+              "secondary-fixed-dim": "#6bd8cb",
+              "primary-fixed-dim": "#b3c5ff",
+              "surface-dim": "#cbdbf5",
+              "secondary-container": "#86f2e4",
+              "on-tertiary-fixed": "#25005a",
+              "on-surface-variant": "#424656",
+              "on-secondary-fixed": "#00201d",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#eaf1ff",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-secondary-container": "#006f66",
+              "tertiary-fixed-dim": "#d2bbff",
+              "outline-variant": "#c2c6d8",
+              "outline": "#727687",
+              "secondary-fixed": "#89f5e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tonal-shift {
+        transition: background-color 0.3s ease;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-clip">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 mb-24">
+<div class="max-w-3xl">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label text-xs font-semibold mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    CLIENT SUCCESS STORIES
+                </span>
+<h1 class="font-headline text-4xl md:text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
+                    Building the future with <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">visionary partners.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed opacity-80 max-w-2xl">
+                    We don't just build software; we architect digital legacies. Explore how our strategic design and elite technical mastery have empowered global leaders to redefine their industries.
+                </p>
+</div>
+</section>
+<!-- Testimonials Grid Section -->
+<section class="bg-surface-container-low py-12 md:py-24">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300">
+<div>
+<div class="mb-8 text-primary">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "The precision PRISM brought to our platform architecture was game-changing. They didn't just meet our specs—they anticipated our future scale."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a male tech executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEc1iGuffd09oI1ZU-tyfBsriWG2Qc3PRIZFalT4yo5rI58obseUk1v_sBQurMeaRrDVHMn3niupxnrLxERTfqpBaGnuxc5zinf8sNGe2GSV78wvrF_88r2fqivhKQGso2TRU-aocBBWmnuJ5FLLQMO6PaVLkDCZ1lVD0028u0Qv4BNgBhZSWQMVRKggAS20ip-b3AqXiYaIfceMwq0IqhzOX4zzr4ZmhveFdQMQlbtXpP4Mb8YIA3jis0uuUFrsVLg-pmABzqfI"/>
+<div>
+<h4 class="font-bold text-on-surface">Marcus Thorne</h4>
+<p class="text-sm text-secondary font-medium">CTO of NexaLink</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">deployed_code</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Large Spacing/Asymmetric Feel) -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300 md:mt-12">
+<div>
+<div class="mb-8 text-primary">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "Prism represents the 'Atelier' of software design. Their attention to micro-interactions and performance is unmatched in the industry."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a female design director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB9xcHutP95MwFSzs_3KpJgnIXutdVjJoDBMPd7q12CuwD6eujxs8TIY0iAZ68_8yYWDjX6hRB4eT5zkCnv4950S_tWuTMG2jJioid215iI3C6rqGNgKHzCP-jO1EY5lLZrZSUsslJDMAfZcBj3quEtVZbsUPfTUYFC46UashRGePf55Q44XIovFmzhQnhtZfL1NjdkWlazPkpRZN7XayydT28GDb9tP6KMuYU6pG8B0NfIjRlle51VNo1IuvSaMfTZKhEygzdc50"/>
+<div>
+<h4 class="font-bold text-on-surface">Sarah Jenkins</h4>
+<p class="text-sm text-secondary font-medium">VP of Product, CloudScale</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">cloud_done</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300">
+<div>
+<div class="mb-8 text-primary">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "Working with PRISM felt like having a partner, not a vendor. They owned our vision and executed it with elite technical mastery."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a male CEO" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFHhB6VDsrHVhKdwo7Lq-sUuTpoco3hazXG5aGYa2favL8qf8ywFrgVG5JQmrzkFzYTfrZZH-XhIgQ8ZKDZPMbAbpwQKkFxDx85VhDsP6Wa9EiqCfYmXttmzIv7984CiIWv7l68289lkrM8a7GMfIeXONOTG_wNOHSW_jCdVRWk0LDmXywgwGHHmbJPnGgWZh8hSjDoVKupZIMeuVYAw60oCNA1OAtJJyXaDgsuz114chNpn3PQef1XU8VwuspiwDestUr2LrHBF4"/>
+<div>
+<h4 class="font-bold text-on-surface">David Chen</h4>
+<p class="text-sm text-secondary font-medium">CEO of TechCorp</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">token</span>
+</div>
+</div>
+</div>
+<!-- Card 4 (Innovative Highlight Style) -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] border border-primary/5 flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300">
+<div>
+<div class="mb-8 text-tertiary">
+<span class="material-symbols-outlined text-4xl opacity-30" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "The speed of delivery without compromising on architectural integrity was what impressed our board the most."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a female entrepreneur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnbQbICGsukbBKQu0oeOZcqyZBq4U_jCjMbXuszybCUW0Qo-3XgP4grk2VCvihnKsCHBZO5jjP-79W-Tf2_vrgiaHhBtWlUZDMSfme7IYqDFDdmC34cCEsIDbI5Jm_O4FL3tBGjUhfaVQUJmLyI_inZkgKpfZQyaj7c9oA0QZkswfGbXBjhgyOfTVODV9fJrG_Tbg1EORYayG2jCsOKG5s0LZKsD_PRSLw0PsD__pODbhIpG1XIZBLMsIDSeDVd4yTlrFFOtlraCE"/>
+<div>
+<h4 class="font-bold text-on-surface">Elena Rodriguez</h4>
+<p class="text-sm text-secondary font-medium">Founder, Aura Systems</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">dynamic_form</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300 lg:mt-12">
+<div>
+<div class="mb-8 text-primary">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "Simply the best architectural consulting we have ever engaged. PRISM’s team is operating at another level entirely."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a senior executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMVimTeCUUL7qDPh4s22A_h7gsYYRXKI5hQelDpDOnUhnap4MUQsUj1isWw4-4dN3gsYqEHxT3qmEx9gtQongijxjtbkLUKiCiIxBXoLKKXVN5Hapyr8U0v-8Fidrgc99ao3HMqevouPFFctc5WDdW-9FXClJWsNAqU4G9GxO2SfRn8T97wTU3REajfqqljxNlPZ-FTt1I-rebGUKTJx8dDaSxLBk72fAk3rAFd5VcEuorhNkYF3IELF2tgxtyC3q5irVN3Cvyxlk"/>
+<div>
+<h4 class="font-bold text-on-surface">Jonathan Wu</h4>
+<p class="text-sm text-secondary font-medium">Director, Global Fintech</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[0_10px_30px_rgba(11,28,48,0.04)] flex flex-col justify-between hover:translate-y-[-4px] transition-all duration-300 md:mt-12 lg:mt-0">
+<div>
+<div class="mb-8 text-primary">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="text-2xl font-headline font-medium leading-snug text-on-surface mb-12 italic">
+                                "Elegant solutions to impossible problems. That is the PRISM trademark. Our user engagement has tripled since launch."
+                            </blockquote>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-14 h-14 rounded-xl object-cover grayscale hover:grayscale-0 transition-all" data-alt="Professional headshot of a female executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlsALAQVPGJ8JSxX4YH5HJV3CAGrEXmSeOpU47o1L0uKKK7B_ALybblrC5oO8X1R8aZACSDiFHhdX-uRfzxdpan2AT8n1-1EDpsQBAihyIvOgRkishiGm4I9xZm0VsK7d2hedCKy8qSmoqkTu8koNcWknbY4Gi3itXFLz8GyeB9RvAW94ZfYE6tCxhygyLa9bVk3b2YMt_7Fd0ZgszRmWWC1k3BuFiBKFxNAiO1oNEBfS8MTI1NKbEzgKafkDhXJNH9bdZqE34kfQ"/>
+<div>
+<h4 class="font-bold text-on-surface">Maya Sterling</h4>
+<p class="text-sm text-secondary font-medium">COO of LuxRetail</p>
+</div>
+<div class="ml-auto opacity-30 grayscale contrast-125">
+<span class="material-symbols-outlined text-3xl">shopping_bag</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 mt-32">
+<div class="relative overflow-hidden bg-on-surface rounded-3xl p-6 md:p-12 md:p-24 text-center">
+<!-- Abstract background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-surface font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
+                        Ready to write your own success story?
+                    </h2>
+<p class="text-surface-variant text-lg opacity-70 mb-12 font-light">
+                        Join an elite circle of businesses that prioritize technical excellence and uncompromising quality. Let's architect your next big move.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-4 md:px-10 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(0,102,255,0.4)] transition-all" onclick="window.location.href='/support/schedule_a_consultation.html'">
+                            Start a Project
+                        </button>
+<button class="bg-white/10 backdrop-blur-md text-surface border border-white/20 px-4 md:px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all" onclick="window.location.href='/support/schedule_a_consultation.html'">
+                            Schedule a Call
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

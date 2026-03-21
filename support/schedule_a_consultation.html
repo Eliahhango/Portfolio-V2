@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule a Consultation | EliTechWiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#005049",
+              "on-secondary-container": "#006f66",
+              "surface-tint": "#0054d6",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#fdf6ff",
+              "secondary": "#006a61",
+              "outline-variant": "#c2c6d8",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#eaddff",
+              "surface": "#f8f9ff",
+              "background": "#f8f9ff",
+              "secondary-container": "#86f2e4",
+              "on-tertiary-fixed": "#25005a",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#b3c5ff",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-highest": "#d3e4fe",
+              "on-error-container": "#93000a",
+              "primary-container": "#0066ff",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#213145",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-background": "#0b1c30",
+              "surface-container": "#e5eeff",
+              "surface-variant": "#d3e4fe",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary-fixed": "#001849",
+              "tertiary": "#6e26df",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#00201d",
+              "on-surface": "#0b1c30",
+              "on-primary-container": "#f8f7ff",
+              "outline": "#727687",
+              "on-primary-fixed-variant": "#003fa4",
+              "primary-fixed": "#dae1ff",
+              "primary": "#0050cb",
+              "tertiary-container": "#8848f9",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#424656",
+              "surface-dim": "#cbdbf5",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-container-low": "#eff4ff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#89f5e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .custom-shadow {
+        box-shadow: 0px 10px 30px rgba(11, 28, 48, 0.04);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-clip">
+<!-- Top Navigation (Shell suppressed for focused task, using simple branding) -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
+<!-- Left Column: Form & Progress -->
+<div class="lg:col-span-7 space-y-12">
+
+<!-- Progress Indicator -->
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 rounded-full bg-primary"></div>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-high"></div>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-high"></div>
+<span class="text-xs font-bold text-primary font-label ml-4 uppercase tracking-widest">Step 1 of 3</span>
+</div>
+<!-- Multi-step Form Container -->
+<section class="bg-surface-container-lowest rounded-xl p-8 md:p-12 custom-shadow border border-outline-variant/15">
+<form id="consultationForm" class="space-y-8">
+<!-- Step 1: Personal Details -->
+<div class="space-y-6" id="step-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant font-label">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-container transition-all" id="contactName" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant font-label">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-container transition-all" id="contactPhone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant font-label">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-container transition-all" id="contactEmail" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-4">
+<button class="w-full md:w-auto px-4 md:px-10 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-full hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all flex items-center justify-center gap-3" type="button">
+                                Continue to Company Details
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Helper Text -->
+<p class="text-center text-sm text-on-surface-variant italic">
+                    All submitted information is strictly confidential and protected by our privacy policy.
+                </p>
+</div>
+<!-- Right Column: Sidebar / Trust Section -->
+<aside class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-8 space-y-10">
+<h2 class="text-2xl font-bold font-headline text-on-surface">Why Consult with Us?</h2>
+<div class="space-y-8">
+<!-- Trust Point 1 -->
+<div class="flex gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface mb-1">Expert Guidance</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Direct access to lead architects with over 15 years of industry-defining experience.</p>
+</div>
+</div>
+<!-- Trust Point 2 -->
+<div class="flex gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="architecture">architecture</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface mb-1">Tailored Solutions</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">No generic templates. Every consultation starts with your specific spatial and technical constraints.</p>
+</div>
+</div>
+<!-- Trust Point 3 -->
+<div class="flex gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface mb-1">Confidentiality</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your IP and project vision are protected under our rigorous non-disclosure protocols.</p>
+</div>
+</div>
+</div>
+<!-- Testimonial Mini-Card -->
+<div class="bg-surface-container-highest/40 p-6 rounded-xl border border-primary/5">
+<p class="text-sm text-on-surface italic leading-relaxed mb-4">
+                            "The initial consultation with EliTechWiz redefined how we approached our HQ project. Their technical depth is unparalleled."
+                        </p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="person">person</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Chief Design Officer, NexGen</span>
+</div>
+</div>
+</div>
+<!-- Help Link -->
+<div class="flex items-center justify-center gap-4 py-4 px-6 border border-outline-variant/20 rounded-xl bg-surface-container-lowest">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help">help</span>
+<span class="text-sm font-medium">Need immediate help? <a class="text-primary font-bold underline decoration-primary/30 underline-offset-4" href="tel:+1234567890">Call our Studio</a></span>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer (Using Shell Logic) -->
+
+<!-- Image for Context Reference -->
+<div class="hidden">
+<img data-alt="Modern architectural office with clean white surfaces and blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE733DiS03pxvSnd0RCPLCWFdia7ZTDJUSUf3DpCLQgfCjSXpmdqTsDcjkl76qYqbbjB9kptYsqzgYRkKqxBAKGhodI0dViWX6nUUAM-sAyTj-X5J8o_Bzn26S33c0vFMaqT6Nsl8mydvVKT7RoWa88hP4H3jcNqq5MDfkVeSg5Skyq-JqdhC-HyR6CrusgM8pPXhAMGO2nI2r_X6coyAQfCa1wSKd4Y28ZjhN5dSMuQlJNevi3q8TDW_ASUb3elKZi0s3cWeStCg"/>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script type="module" src="/js/contact.js" id="contact-module"></script>
+</body></html>
+
+

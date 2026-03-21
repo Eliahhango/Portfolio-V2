@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Kick-off | EliTechWiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#f8f7ff",
+              "on-surface": "#0b1c30",
+              "outline": "#727687",
+              "on-primary-fixed-variant": "#003fa4",
+              "surface-dim": "#cbdbf5",
+              "inverse-on-surface": "#eaf1ff",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#424656",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#89f5e7",
+              "surface-container-low": "#eff4ff",
+              "primary-fixed": "#dae1ff",
+              "primary": "#0050cb",
+              "tertiary-container": "#8848f9",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-background": "#0b1c30",
+              "surface-container": "#e5eeff",
+              "inverse-surface": "#213145",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#00201d",
+              "tertiary": "#6e26df",
+              "surface-variant": "#d3e4fe",
+              "primary-fixed-dim": "#b3c5ff",
+              "on-primary-fixed": "#001849",
+              "error-container": "#ffdad6",
+              "secondary-container": "#86f2e4",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-highest": "#d3e4fe",
+              "primary-container": "#0066ff",
+              "on-tertiary-fixed": "#25005a",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#b3c5ff",
+              "on-error": "#ffffff",
+              "secondary": "#006a61",
+              "on-tertiary-container": "#fdf6ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-secondary-container": "#006f66",
+              "surface-bright": "#f8f9ff",
+              "surface-tint": "#0054d6",
+              "surface-container-high": "#dce9ff",
+              "background": "#f8f9ff",
+              "outline-variant": "#c2c6d8",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#eaddff",
+              "surface": "#f8f9ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .tap-highlight-transparent {
+        -webkit-tap-highlight-color: transparent;
+      }
+      .tonal-shift {
+        background: linear-gradient(to bottom, transparent, rgba(239, 244, 255, 0.5));
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased pb-32 overflow-x-clip">
+<!-- TopAppBar -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="mt-24 px-6 max-w-2xl mx-auto space-y-12">
+<!-- Introduction -->
+<section class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-semibold uppercase tracking-wider font-label">
+<span class="material-symbols-outlined text-sm" data-icon="rocket_launch">rocket_launch</span>
+                Welcome Aboard
+            </div>
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Let's build something <span class="text-primary">extraordinary</span>.</h2>
+<p class="text-on-surface-variant leading-relaxed opacity-80">Welcome to EliTechWiz. To ensure a seamless development process, please complete this onboarding checklist. This helps us align our technical expertise with your vision.</p>
+</section>
+<!-- Section 1: Information Gathering -->
+<section class="bg-surface-container-low rounded-3xl p-1 shadow-[0_10px_30px_rgba(11,28,48,0.04)]">
+<div class="bg-surface-container-lowest rounded-[22px] p-6 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Information Gathering</h3>
+<p class="text-xs text-outline font-medium uppercase tracking-wider">Foundation Phase</p>
+</div>
+</div>
+<div class="space-y-4">
+<label class="flex items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group border border-transparent active:scale-[0.98] duration-200">
+<input class="w-6 h-6 rounded-lg border-outline-variant text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+<span class="ml-4 font-medium text-on-surface group-hover:text-primary transition-colors">Submit Project Brief</span>
+<span class="material-symbols-outlined ml-auto text-outline-variant" data-icon="description">description</span>
+</label>
+<label class="flex items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group border border-transparent active:scale-[0.98] duration-200">
+<input class="w-6 h-6 rounded-lg border-outline-variant text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+<span class="ml-4 font-medium text-on-surface group-hover:text-primary transition-colors">Define Target Audience</span>
+<span class="material-symbols-outlined ml-auto text-outline-variant" data-icon="groups">groups</span>
+</label>
+<label class="flex items-center p-4 rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group border border-transparent active:scale-[0.98] duration-200">
+<input class="w-6 h-6 rounded-lg border-outline-variant text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+<span class="ml-4 font-medium text-on-surface group-hover:text-primary transition-colors">Share Brand Assets</span>
+<span class="material-symbols-outlined ml-auto text-outline-variant" data-icon="palette">palette</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Section 2: Access & Credentials -->
+<section class="bg-surface-container-low rounded-3xl p-1 shadow-[0_10px_30px_rgba(11,28,48,0.04)]">
+<div class="bg-surface-container-lowest rounded-[22px] p-6 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Access &amp; Credentials</h3>
+<p class="text-xs text-outline font-medium uppercase tracking-wider">Technical Provisioning</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="dns">dns</span>
+<span class="font-medium">Provide Hosting Access</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="code">code</span>
+<span class="font-medium">Grant GitHub Access</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="analytics">analytics</span>
+<span class="font-medium">Share Analytics Access</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Communication Preferences -->
+<section class="bg-surface-container-low rounded-3xl p-1 shadow-[0_10px_30px_rgba(11,28,48,0.04)]">
+<div class="bg-surface-container-lowest rounded-[22px] p-6 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Communication Preferences</h3>
+<p class="text-xs text-outline font-medium uppercase tracking-wider">Alignment Strategy</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">Select Primary Channel</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-secondary text-on-secondary text-sm font-medium transition-all shadow-md">Slack</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-all">Microsoft Teams</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-all">Email</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">Meeting Frequency</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none font-medium">
+<option>Daily Stand-up</option>
+<option selected="">Weekly Check-in</option>
+<option>Bi-weekly Review</option>
+<option>Monthly Strategic</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Submit Button -->
+<div class="pt-6 pb-12">
+<button class="w-full py-5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg shadow-[0_10px_25px_rgba(0,80,203,0.25)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
+                Submit Checklist
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-outline text-xs mt-6 font-medium">By submitting, you agree to our Project Initiation Protocols.</p>
+</div>
+</main>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

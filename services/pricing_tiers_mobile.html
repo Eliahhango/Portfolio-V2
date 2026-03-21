@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | EliTechWiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "surface": "#f8f9ff",
+              "on-primary-container": "#f8f7ff",
+              "surface-container-highest": "#d3e4fe",
+              "on-secondary-fixed-variant": "#005049",
+              "on-error": "#ffffff",
+              "secondary": "#006a61",
+              "on-tertiary-fixed": "#25005a",
+              "surface-variant": "#d3e4fe",
+              "surface-container-low": "#eff4ff",
+              "on-primary-fixed": "#001849",
+              "tertiary": "#6e26df",
+              "primary-container": "#0066ff",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "error": "#ba1a1a",
+              "surface-bright": "#f8f9ff",
+              "on-background": "#0b1c30",
+              "outline": "#727687",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-container-high": "#dce9ff",
+              "primary-fixed": "#dae1ff",
+              "on-tertiary-container": "#fdf6ff",
+              "secondary-container": "#86f2e4",
+              "background": "#f8f9ff",
+              "on-surface-variant": "#424656",
+              "inverse-primary": "#b3c5ff",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#213145",
+              "on-surface": "#0b1c30",
+              "tertiary-fixed": "#eaddff",
+              "secondary-fixed": "#89f5e7",
+              "surface-tint": "#0054d6",
+              "on-secondary-container": "#006f66",
+              "surface-container": "#e5eeff",
+              "outline-variant": "#c2c6d8",
+              "on-primary-fixed-variant": "#003fa4",
+              "tertiary-container": "#8848f9",
+              "on-secondary-fixed": "#00201d",
+              "surface-dim": "#cbdbf5",
+              "primary": "#0050cb",
+              "inverse-on-surface": "#eaf1ff",
+              "primary-fixed-dim": "#b3c5ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .pricing-gradient {
+            background: linear-gradient(135deg, #0050cb 0%, #0066ff 100%);
+        }
+        .ambient-shadow {
+            shadow: 0px 10px 30px rgba(11, 28, 48, 0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-clip">
+<!-- TopAppBar -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-screen-xl mx-auto">
+<!-- Hero Section -->
+<section class="text-center mb-16 md:mb-24">
+<span class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-4 font-label">Pricing Plans</span>
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-6 leading-tight">Investment for <br/><span class="text-primary">Elite Performance</span></h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">Choose a strategic partner for your digital evolution. Transparent tiers designed for scalable excellence.</p>
+</section>
+<!-- Pricing Tiers Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<!-- Starter Tier -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col border border-outline-variant/15 shadow-[0_10px_30px_rgba(11,28,48,0.04)] transition-all duration-300 hover:scale-[1.02]">
+<div class="mb-8">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Starter</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-extrabold text-primary">$2,499</span>
+<span class="text-on-surface-variant font-label text-sm">/mo</span>
+</div>
+<p class="mt-4 text-on-surface-variant text-sm leading-relaxed">Perfect for boutiques and emerging startups seeking professional presence.</p>
+</div>
+<div class="flex-grow space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">20 Development Hours / mo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Core UI/UX Fundamentals</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Cloud Hosting Setup</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Standard Support (48h)</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-surface-container-low transition-colors" onclick="window.location.href='/pricing/subscription_pricing_plans.html'">Select Starter</button>
+</div>
+<!-- Professional Tier (Featured) -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col border-2 border-primary/20 shadow-[0_20px_40px_rgba(0,80,203,0.08)] relative z-10 scale-105 transform transition-all duration-300">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Most Popular</div>
+<div class="mb-8 mt-2">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Professional</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-extrabold text-primary">$5,999</span>
+<span class="text-on-surface-variant font-label text-sm">/mo</span>
+</div>
+<p class="mt-4 text-on-surface-variant text-sm leading-relaxed">Tailored for growing businesses requiring deep technical agility.</p>
+</div>
+<div class="flex-grow space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface font-semibold">60 Development Hours / mo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Advanced Digital Strategy</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Premium UI/UX System Design</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Priority Tech Support (12h)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Performance Optimization</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-full pricing-gradient text-on-primary font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity" onclick="window.location.href='/pricing/subscription_pricing_plans.html'">Select Professional</button>
+</div>
+<!-- Enterprise Tier -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col border border-outline-variant/15 shadow-[0_10px_30px_rgba(11,28,48,0.04)] transition-all duration-300 hover:scale-[1.02]">
+<div class="mb-8">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Enterprise</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-headline font-extrabold text-primary">$12,999</span>
+<span class="text-on-surface-variant font-label text-sm">/mo</span>
+</div>
+<p class="mt-4 text-on-surface-variant text-sm leading-relaxed">Full-scale digital transformation with dedicated expert teams.</p>
+</div>
+<div class="flex-grow space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">150+ Development Hours / mo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Dedicated Product Manager</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Custom API Architecture</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">24/7 VIP Engineering Support</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm text-on-surface">Security Audits &amp; Compliance</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-surface-container-low transition-colors" onclick="window.location.href='/pricing/subscription_pricing_plans.html'">Select Enterprise</button>
+</div>
+</div>
+<!-- Custom Quote Section -->
+<section class="bg-surface-container-low rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
+<div class="max-w-xl">
+<h2 class="text-2xl md:text-3xl font-headline font-extrabold text-on-surface mb-4">Complex Architecture Needs?</h2>
+<p class="text-on-surface-variant leading-relaxed">Our Enterprise solutions often require bespoke agreements. Connect with our principal engineers to design a custom framework tailored to your specific technical requirements.</p>
+</div>
+<button class="whitespace-nowrap px-4 md:px-10 py-5 rounded-full bg-on-surface text-surface font-bold hover:bg-on-surface-variant transition-colors flex items-center gap-2" onclick="window.location.href='/support/schedule_a_consultation.html'">
+                Get Custom Quote
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Trust Badges -->
+<div class="mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex justify-center"><img alt="Partner Logo 1" class="h-8 object-contain" data-alt="Abstract minimalist tech logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsylJ2wzOkMMHwSSy3T4yG6YeUeEmIC_eyzqgZ38j3BtMW1E3ylbj3aZ8atHgQDc7ne2p80RlGbwEgdD7_If4MiDcsSu9XmZlSApYVOrqjIQUxqJc7NNaQslZ2xXQeYBnAyYXk9BcRKTFidIpRe74VBvrKMxv6QqiOAXWJ9sO5Z6rcnajZqE4fmMPIjovjw9c4olv7ET-ssohCA67epkqhAUBpLxhFgc-d5Tdi9LwP45mNlbEFBqmhld7bhaRcQj7sCP-ssS2AwEk"/></div>
+<div class="flex justify-center"><img alt="Partner Logo 2" class="h-8 object-contain" data-alt="Abstract minimalist corporate logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-PbZbl9XxwMmVNC8Gi0xZI0LeRYn15_43yN4vvU_NZ81U2WaeJC2yBAtmDmtM9UWoH77UFtt8WZzKAEf-2VPvOLZhWHXyt8gzAw-s-w-AJU2JrnmAu-6lyruOsF9IqXkVewFezKN5fI_z8vOhj3pcUzyeJVoaYCrIa-wmRebAG6gH3O3yfDczPdGscp6e4rY5FrG3NQaoqQi4hNmMhdjtSp0kyNsZski77Y8b-Qr-xFdeKGd4MLdSu966KXjjR5X0BKE5o1MTh40"/></div>
+<div class="flex justify-center"><img alt="Partner Logo 3" class="h-8 object-contain" data-alt="Abstract minimalist software logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCB4R8RRKxjrukJRZw7wv3n0Qsk4tSzBcH9RKXSP5r3DwXICNli-jz3Fce9eJpjzbWM8phFRgrK1ha4nJw7kXZRZyJq4S8jk3jL4tEvLpXxN3h_c7aAdeALjM-_VykAg--VnqpHGXTNC_QqvjpGPEMHEnlmo5hhGuXYMGFktMsccZGMeaNf6D7EPs-f8ntuZnQV6PiONt6aVmZwyFxEX_sVg6xv6-B87HH8PJF_rKSguSqK9oM-dQNAY6ZRgC8PCMc6kVMiIbk5tI"/></div>
+<div class="flex justify-center"><img alt="Partner Logo 4" class="h-8 object-contain" data-alt="Abstract minimalist cloud logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgq405Mc7WavPwsaf4l0OJ09rk3KcsaXqRefKuC6Xi0wryCKecZykTP_qBTWmoWj4tc1gmV61xon4f_9YCmW7MQMKTs43jGLfb3Y2lwY9-Lg5kHjvT3DD4jDXOYyc2PIVJ3Kl961-4FrnHNSXiu3bn5v6pw86pDQb9XPfmEsHzxmbsOFKnQ7Ajsf1sB3CcDjwtEODdt4iyGVWTe-wv2Vy2f9-_a7VCaotqojqMMz0jznRCG8paEXB9NoCXaznxdN3J51TC_ApBzXc"/></div>
+</div>
+</main>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+
