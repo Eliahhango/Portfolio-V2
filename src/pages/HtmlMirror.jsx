@@ -73,6 +73,7 @@ const HtmlMirror = ({ src }) => {
         opacity: 0;
         transform: translateY(14px) scale(0.98);
         animation: ezw-char-reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-play-state: paused;
       }
 
       .ezw-word-gap {
@@ -91,6 +92,10 @@ const HtmlMirror = ({ src }) => {
           transform: translateY(0) scale(1);
           filter: blur(0);
         }
+      }
+
+      .ezw-in-view .ezw-char {
+        animation-play-state: running;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -123,10 +128,21 @@ const HtmlMirror = ({ src }) => {
       const nodes = []
       const nodeCount = win.innerWidth < 768 ? 22 : 36
       const maxDistance = win.innerWidth < 768 ? 130 : 170
+      const pointer = { x: win.innerWidth / 2, y: win.innerHeight / 2, active: false }
 
       const resizeCanvas = () => {
         canvas.width = win.innerWidth
         canvas.height = win.innerHeight
+      }
+
+      const onPointerMove = (event) => {
+        pointer.x = event.clientX
+        pointer.y = event.clientY
+        pointer.active = true
+      }
+
+      const onPointerLeave = () => {
+        pointer.active = false
       }
 
       for (let i = 0; i < nodeCount; i += 1) {
@@ -145,6 +161,20 @@ const HtmlMirror = ({ src }) => {
 
         for (let i = 0; i < nodes.length; i += 1) {
           const a = nodes[i]
+          if (pointer.active) {
+            const pdx = pointer.x - a.x
+            const pdy = pointer.y - a.y
+            const pDistance = Math.sqrt(pdx * pdx + pdy * pdy)
+            if (pDistance < 220 && pDistance > 0) {
+              const pull = (1 - pDistance / 220) * 0.006
+              a.vx += pdx * pull
+              a.vy += pdy * pull
+            }
+          }
+
+          a.vx *= 0.994
+          a.vy *= 0.994
+
           a.x += a.vx
           a.y += a.vy
 
@@ -153,7 +183,7 @@ const HtmlMirror = ({ src }) => {
 
           ctx.beginPath()
           ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2)
-          ctx.fillStyle = 'rgba(0, 102, 255, 0.6)'
+          ctx.fillStyle = 'rgba(0, 102, 255, 0.55)'
           ctx.fill()
 
           for (let j = i + 1; j < nodes.length; j += 1) {
@@ -163,12 +193,12 @@ const HtmlMirror = ({ src }) => {
             const distance = Math.sqrt(dx * dx + dy * dy)
 
             if (distance < maxDistance) {
-              const alpha = (1 - distance / maxDistance) * 0.35
+              const alpha = (1 - distance / maxDistance) * 0.42
               ctx.beginPath()
               ctx.moveTo(a.x, a.y)
               ctx.lineTo(b.x, b.y)
               ctx.strokeStyle = `rgba(0, 102, 255, ${alpha})`
-              ctx.lineWidth = 1
+              ctx.lineWidth = 0.9
               ctx.stroke()
             }
           }
@@ -179,6 +209,8 @@ const HtmlMirror = ({ src }) => {
 
       resizeCanvas()
       win.addEventListener('resize', resizeCanvas)
+      doc.addEventListener('mousemove', onPointerMove)
+      doc.addEventListener('mouseleave', onPointerLeave)
       draw()
     }
 
@@ -198,6 +230,7 @@ const HtmlMirror = ({ src }) => {
     const headlineNodes = Array.from(doc.querySelectorAll('h1, h2'))
     headlineNodes.forEach((node) => {
       if (node.dataset.ezwSplit === '1') return
+      if (node.children.length > 0) return
       const text = node.textContent || ''
       if (!text.trim()) return
 
