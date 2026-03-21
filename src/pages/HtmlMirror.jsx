@@ -17,6 +17,24 @@ const HtmlMirror = ({ src }) => {
     style.textContent = `
       body {
         position: relative;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-synthesis: none;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3 {
+        text-wrap: balance;
+        letter-spacing: -0.015em;
+      }
+
+      p, li {
+        text-wrap: pretty;
+      }
+
+      main {
+        scroll-behavior: smooth;
       }
 
       #ezw-network-canvas {
@@ -26,7 +44,7 @@ const HtmlMirror = ({ src }) => {
         height: 100%;
         pointer-events: none;
         z-index: 2147483640;
-        opacity: 0.35;
+        opacity: 0.42;
       }
 
       .ezw-reveal {
@@ -60,7 +78,8 @@ const HtmlMirror = ({ src }) => {
       }
 
       .ezw-hoverable:hover {
-        transform: translateY(-3px) scale(1.02);
+        transform: translateY(-4px) scale(1.024);
+        filter: saturate(1.08);
       }
 
       .ezw-char {
@@ -160,6 +179,9 @@ const HtmlMirror = ({ src }) => {
           vx: (Math.random() - 0.5) * (isMobile ? 0.32 : 0.42),
           vy: (Math.random() - 0.5) * (isMobile ? 0.32 : 0.42),
           r: Math.random() * 1.4 + 0.8,
+          pulse: Math.random() * Math.PI * 2,
+          pulseSpeed: Math.random() * 0.02 + 0.01,
+          glow: Math.random() * 0.22 + 0.16,
         })
       }
 
@@ -169,11 +191,21 @@ const HtmlMirror = ({ src }) => {
           return
         }
         lastTs = ts
+        const t = ts * 0.001
+        const focusX = pointer.active ? pointer.x : win.innerWidth * (0.5 + Math.sin(t * 0.18) * 0.08)
+        const focusY = pointer.active ? pointer.y : win.innerHeight * (0.42 + Math.cos(t * 0.21) * 0.07)
 
         ctx.clearRect(0, 0, win.innerWidth, win.innerHeight)
 
+        const gradient = ctx.createRadialGradient(focusX, focusY, 20, focusX, focusY, Math.max(win.innerWidth, win.innerHeight) * 0.65)
+        gradient.addColorStop(0, 'rgba(0, 102, 255, 0.13)')
+        gradient.addColorStop(1, 'rgba(0, 102, 255, 0)')
+        ctx.fillStyle = gradient
+        ctx.fillRect(0, 0, win.innerWidth, win.innerHeight)
+
         for (let i = 0; i < nodes.length; i += 1) {
           const a = nodes[i]
+          a.pulse += a.pulseSpeed
 
           if (pointer.active) {
             const pdx = pointer.x - a.x
@@ -194,9 +226,15 @@ const HtmlMirror = ({ src }) => {
           if (a.x < 0 || a.x > win.innerWidth) a.vx *= -1
           if (a.y < 0 || a.y > win.innerHeight) a.vy *= -1
 
+          const dynamicR = a.r + Math.sin(a.pulse + t * 1.4) * 0.35
           ctx.beginPath()
-          ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2)
-          ctx.fillStyle = 'rgba(0, 102, 255, 0.72)'
+          ctx.arc(a.x, a.y, dynamicR, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(0, 102, 255, ${0.62 + Math.sin(a.pulse + t) * 0.14})`
+          ctx.fill()
+
+          ctx.beginPath()
+          ctx.arc(a.x, a.y, dynamicR * 3.2, 0, Math.PI * 2)
+          ctx.fillStyle = `rgba(0, 170, 255, ${a.glow * 0.18})`
           ctx.fill()
 
           for (let j = i + 1; j < nodes.length; j += 1) {
@@ -206,12 +244,13 @@ const HtmlMirror = ({ src }) => {
             const distance = Math.sqrt(dx * dx + dy * dy)
 
             if (distance < maxDistance) {
-              const alpha = (1 - distance / maxDistance) * 0.5
+              const energy = 0.86 + Math.sin(t * 1.2 + i * 0.2 + j * 0.12) * 0.14
+              const alpha = (1 - distance / maxDistance) * 0.5 * energy
               ctx.beginPath()
               ctx.moveTo(a.x, a.y)
               ctx.lineTo(b.x, b.y)
-              ctx.strokeStyle = `rgba(0, 102, 255, ${alpha})`
-              ctx.lineWidth = 1
+              ctx.strokeStyle = `rgba(0, 125, 255, ${alpha})`
+              ctx.lineWidth = 0.8 + (1 - distance / maxDistance) * 0.55
               ctx.stroke()
             }
           }
