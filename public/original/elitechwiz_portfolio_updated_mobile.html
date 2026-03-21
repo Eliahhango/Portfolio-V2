@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EliTechWiz | Visionary Technologist &amp; Creative Designer</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c2c6d8",
+              "on-secondary": "#ffffff",
+              "tertiary": "#6e26df",
+              "surface-bright": "#f8f9ff",
+              "on-surface-variant": "#424656",
+              "primary-fixed-dim": "#b3c5ff",
+              "outline": "#727687",
+              "surface-dim": "#cbdbf5",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#00201d",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#25005a",
+              "surface-tint": "#0054d6",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-fixed-variant": "#005049",
+              "tertiary-fixed": "#eaddff",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#f8f7ff",
+              "background": "#f8f9ff",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#fdf6ff",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#b3c5ff",
+              "secondary-fixed": "#89f5e7",
+              "tertiary-container": "#8848f9",
+              "surface-container-highest": "#d3e4fe",
+              "secondary-container": "#86f2e4",
+              "inverse-on-surface": "#eaf1ff",
+              "on-secondary-container": "#006f66",
+              "surface": "#f8f9ff",
+              "primary": "#0066FF",
+              "primary-fixed": "#dae1ff",
+              "primary-container": "#0066ff",
+              "surface-container-high": "#dce9ff",
+              "on-surface": "#0b1c30",
+              "on-primary-fixed": "#001849",
+              "surface-container": "#e5eeff",
+              "on-primary-fixed-variant": "#003fa4",
+              "inverse-surface": "#213145",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "secondary": "#006a61",
+              "on-background": "#0b1c30",
+              "surface-container-low": "#eff4ff",
+              "tertiary-fixed-dim": "#d2bbff",
+              "secondary-fixed-dim": "#6bd8cb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-clip">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative overflow-hidden pt-16 pb-24 md:pt-32 md:pb-40" id="home">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-6 leading-tight">
+                    I Am EliTechWiz <br/>
+<span class="text-primary">A Creative Designer</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl mx-auto mb-10">
+                    Merging technology, design, and strategy to build secure, innovative, and impactful digital experiences.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-4 md:px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform" onclick="window.location.href='/support/schedule_a_consultation.html'">
+                        Let's Innovate Together
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-4 md:px-8 py-4 rounded-lg font-bold hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2" onclick="window.location.href='/auth/client_login_secure.html'">
+<span class="material-symbols-outlined" data-icon="code">code</span> GitHub
+                    </button>
+</div>
+</div>
+</section>
+<!-- Section 2: About Me -->
+<section class="py-12 md:py-24 bg-surface-container-low" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+<div class="flex justify-center lg:justify-start">
+<div class="relative w-64 md:w-80 aspect-square rounded-full overflow-hidden border-8 border-white shadow-2xl">
+<img alt="EliTechWiz Professional Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvE-Yk7PRMuzrGIj59InOv0QrU0Gj5ATZW0_pXQSAD8vLPAP9hSx0BRjXvON81EasWkD0iEyn059-zdTf06mphd-augu1a36GACNfFLrTA-42tTtmyzZ-2osdu-dwbCC9FbNXm0uqenKTncDKayj6RrnvjdE_1a1FfOcvidfDLIZQ4bZDA1Kz_Qx_fRZwZwdGUqlKVP4eGCEi2PXx8RDylXHhWN8Wz5qh45b5I7B8JeH7VYHP8ECv39ifGp6p3VGDHd8rV7roC1fY"/>
+</div>
+</div>
+<div>
+<h2 class="text-3xl font-extrabold mb-6">About Me</h2>
+<div class="space-y-4 text-on-surface-variant text-lg leading-relaxed">
+<p>I am EliTechWiz, a visionary technologist, hacker, and creative mind, driven by innovation and the pursuit of digital excellence. My expertise spans cybersecurity, software development, UI/UX design, graphics and architectural design, and more.</p>
+<p>With a passion for turning complex problems into elegant solutions, I merge technology, design, and strategy to create impactful digital experiences. As a CEO and creator, I thrive on building projects that push boundaries, challenge norms, and leave a lasting impression in the tech world.</p>
+<p>Whether I'm securing digital spaces, designing intuitive interfaces, or crafting visually stunning creations, my goal is to transform ideas into reality with precision, creativity, and a relentless drive for excellence.</p>
+<p class="font-bold italic text-on-surface">Let's innovate, design, and dominate the digital future together.</p>
+</div>
+</div>
+</div>
+<!-- Achievements -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-outline-variant/30 pt-16">
+<div>
+<p class="text-4xl font-extrabold text-on-surface">4+</p>
+<p class="text-on-surface-variant font-medium">Years of Experience</p>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-on-surface">50+</p>
+<p class="text-on-surface-variant font-medium">Projects Completed</p>
+</div>
+<div>
+<p class="text-4xl font-extrabold text-on-surface">100+</p>
+<p class="text-on-surface-variant font-medium">Happy Clients</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Areas of Expertise -->
+<section class="py-12 md:py-24 bg-surface" id="expertise">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold mb-4">Areas of Expertise</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Expertise 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-center">Cybersecurity &amp; Hacking</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+<span class="text-sm font-medium">Penetration Testing</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+<span class="text-sm font-medium">Network Security</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="text-sm font-medium">Ethical Hacking</span>
+</li>
+</ul>
+</div>
+<!-- Expertise 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-center">Software Development</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="javascript">code</span>
+<span class="text-sm font-medium">React &amp; TypeScript</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="dns">dns</span>
+<span class="text-sm font-medium">Node.js &amp; Express</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="integration_instructions">integration_instructions</span>
+<span class="text-sm font-medium">Python &amp; Django</span>
+</li>
+</ul>
+</div>
+<!-- Expertise 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+<h3 class="text-xl font-bold mb-6 text-center">Design &amp; Architecture</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+<span class="text-sm font-medium">UI/UX Design</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="account_tree">account_tree</span>
+<span class="text-sm font-medium">System Architecture</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+<span class="text-sm font-medium">Graphic Design</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: My Journey -->
+<section class="py-12 md:py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold mb-4">My Journey</h2>
+</div>
+<div class="relative max-w-2xl mx-auto pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-primary/20">
+<!-- Event 1 -->
+<div class="relative mb-12">
+<div class="absolute -left-[36px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white"></div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 shadow-sm">
+<span class="text-xs font-bold text-primary uppercase tracking-widest mb-2 block">2022 — Present</span>
+<h4 class="text-xl font-bold mb-1">CEO &amp; Lead Architect</h4>
+<p class="text-sm font-medium text-on-surface-variant mb-4">EliTechWiz Innovations</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Leading a team of innovators to build next-generation security and software solutions. Overseeing all aspects from concept to deployment.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative mb-12">
+<div class="absolute -left-[36px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 shadow-sm">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block">2018 — 2020</span>
+<h4 class="text-xl font-bold mb-1">Senior Security Consultant</h4>
+<p class="text-sm font-medium text-on-surface-variant mb-4">CyberSafe Corp</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Conducted penetration tests and security audits for Fortune 500 companies, identifying critical vulnerabilities and designing mitigation strategies.</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative">
+<div class="absolute -left-[36px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 shadow-sm">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 block">2015 — 2018</span>
+<h4 class="text-xl font-bold mb-1">Full-Stack Developer</h4>
+<p class="text-sm font-medium text-on-surface-variant mb-4">DevSolutions Ltd</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Developed and maintained web applications for various clients, specializing in scalable backend systems and responsive user interfaces.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Portfolio -->
+<section class="py-12 md:py-24 bg-surface" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold mb-4">Portfolio</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<img alt="SecureAuth Platform" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqa7T2TuJ7hH_eZ7Bl1X2lVRAzBy8ZSXzTlN1CuaTDgh8E-iU9CygZJ71M_7fA7VZpvo7U-F-uj2NYFkxI8Q2lD4iT9HIst9frHvW4WUs5sbx-vZEvRxmgYRq2a1u0tP5iIgMJptONLBiVh4zle_bnZwWPIWf9hxnXEw7p57lkX43x4YuRuq0yO3TxmvxVyUmA0fchden1-t6C6TJepFPWQwHr2zC9hGTP9O9Tt_QnYKn68I-oqAn_HCMy5z3oxyyRdncq3ZUcvs"/>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">SecureAuth Platform</h4>
+<p class="text-sm text-on-surface-variant mb-4">A multi-factor authentication system for enterprise applications.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Cybersecurity</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">React</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Node.js</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<img alt="DataViz Dashboard" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6gNXs6D8766iJke4_MP-ALjNDKCM_ZnwADtr5xOep4hmFZy_bvAYekyyzRGI2ILJQVQLzzLWPAgSY0sQQ723b6kTgbitS1soH_jUO9STMRPw1LsPL8C56H-Jsq4uyJff-KYrZFXV_okMcm-r6mEXt_x-XmTR2mxXsMkJ2UuJpilVy4Se97E0BcfBsXhQxxkXUT0DzInzLXT9IcZ1wZeawAUkuFya9z7aQXx9lK__O8qUPe1PPfHrHbCYz2isRy1Ir7TdXxO13yOU"/>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">DataViz Dashboard</h4>
+<p class="text-sm text-on-surface-variant mb-4">An interactive data visualization tool for business intelligence.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Data Science</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">D3.js</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">BI</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<img alt="E-commerce Redesign" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdH_2XntEBv5eXS10ieg0EJtSlZ5minwl8LtKxWwsOux1jfTzkZg0f3GAPSwcJSjJ9aRKHse3G9KWz2uB3UXmugqD8nsGu1C7Y7YT6QWiRryp8_voU7izgzSVYuIKXx_wZ-SW1_BEsMHdXFP3S8BA5xJVnexpe7hsU01J5K9iEpaKhefoNC7AIqqu7HzfU-UTdCJMs4rRiZ1W9U47y2oFCeEnTUnOXxeyqq-atJqa79NT92JpJXGxeDHfMISW4NigkseDqSpgz_IQ"/>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">E-commerce Redesign</h4>
+<p class="text-sm text-on-surface-variant mb-4">A complete UI/UX overhaul for a major online retailer.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">UI/UX</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Next.js</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">E-commerce</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<img alt="Architectural Visualization" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsOKHz4S8uYxiayGFv02ClGITpP9FPFFAhoyTS8tB6ST7A-73EN8fYUcv2KHzLoA3yzMGzjY342261GD1fIDRAHiFArrpkq_H3W2DAXTnfYHdxbcBekn1S3i2SnXtAcRQTmRME8jm2j7YR64C0kzGeBGDSF7hysZOrDaxAkSXoRR8qvYMqNZoOY198rAg_dAk-uHOV0XVI3ilWF9yWAfj3LO6_MbNhBNJorpo5vMis_g3mZKIPwQMzr4HlSyiPp-rQAT-uaarOf1I"/>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">Architectural Visualization</h4>
+<p class="text-sm text-on-surface-variant mb-4">3D modeling and rendering of a modern residential complex.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Civil Engineering</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Revit</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<div class="w-full aspect-video bg-slate-900 flex items-center justify-center p-4">
+<span class="material-symbols-outlined text-primary text-4xl md:text-6xl" data-icon="security">security</span>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">Network Intrusion Detection</h4>
+<p class="text-sm text-on-surface-variant mb-4">A custom AI-based IDS for a corporate network.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Cybersecurity</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Python</span>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/10 shadow-sm">
+<div class="w-full aspect-video bg-primary-container/20 flex items-center justify-center p-4">
+<span class="material-symbols-outlined text-primary text-4xl md:text-6xl" data-icon="web">web</span>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold mb-2">Portfolio Website</h4>
+<p class="text-sm text-on-surface-variant mb-4">This very website, built to showcase my skills.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">React</span>
+<span class="px-2 py-1 bg-surface-container-low rounded text-[10px] font-bold uppercase">Tailwind</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Contact -->
+<section class="py-12 md:py-24 bg-surface-container-low" id="contact">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold mb-4">Get In Touch</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-outline mb-0.5">Email</p>
+<p class="text-sm font-medium">contact@elitechwiz.site</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-outline mb-0.5">Phone</p>
+<p class="text-sm font-medium">+255 688 164 510</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-outline mb-0.5">WhatsApp</p>
+<p class="text-sm font-medium">+255 742 531 101</p>
+</div>
+</div>
+</div>
+<div class="max-w-3xl mx-auto bg-surface-container-lowest p-8 md:p-12 rounded-3xl border border-outline-variant/10 shadow-xl">
+<h3 class="text-2xl font-bold mb-8 text-center">Send Me a Message</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-bold mb-2">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Subject</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Project Inquiry" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Message</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Tell me about your vision..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform" type="submit">
+                            Send Message
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-10 md:py-16 bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<span class="material-symbols-outlined text-4xl md:text-5xl mb-6" data-icon="drafts">drafts</span>
+<h2 class="text-3xl font-extrabold mb-4">Stay Updated with Latest Security Insights</h2>
+<p class="text-primary-fixed-dim max-w-xl mx-auto mb-8">Get expert cybersecurity tips, software development trends, and exclusive content delivered to your inbox.</p>
+<div class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-white text-on-surface rounded-lg px-6 py-4 focus:outline-none" placeholder="Enter your email address" type="email"/>
+<button class="bg-amber-400 text-slate-900 font-bold px-4 md:px-8 py-4 rounded-lg hover:bg-amber-300 transition-colors">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

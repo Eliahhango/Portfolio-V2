@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | Atelier Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#005049",
+              "on-surface-variant": "#424656",
+              "secondary-fixed-dim": "#6bd8cb",
+              "outline-variant": "#c2c6d8",
+              "error-container": "#ffdad6",
+              "primary-fixed": "#dae1ff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-tint": "#0054d6",
+              "surface-dim": "#cbdbf5",
+              "on-surface": "#0b1c30",
+              "on-background": "#0b1c30",
+              "inverse-primary": "#b3c5ff",
+              "on-primary-container": "#f8f7ff",
+              "on-secondary-container": "#006f66",
+              "on-primary-fixed": "#001849",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-container-low": "#eff4ff",
+              "secondary-container": "#86f2e4",
+              "surface-container": "#e5eeff",
+              "primary-fixed-dim": "#b3c5ff",
+              "background": "#f8f9ff",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#d3e4fe",
+              "tertiary-fixed": "#eaddff",
+              "surface": "#f8f9ff",
+              "secondary-fixed": "#89f5e7",
+              "secondary": "#006a61",
+              "tertiary-container": "#8848f9",
+              "on-secondary-fixed": "#00201d",
+              "tertiary": "#6e26df",
+              "surface-container-high": "#dce9ff",
+              "surface-bright": "#f8f9ff",
+              "on-tertiary-fixed": "#25005a",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#d3e4fe",
+              "on-primary-fixed-variant": "#003fa4",
+              "inverse-surface": "#213145",
+              "primary": "#0050cb",
+              "on-tertiary-container": "#fdf6ff",
+              "primary-container": "#0066ff",
+              "outline": "#727687"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .ambient-shadow {
+        box-shadow: 0px 10px 30px rgba(11, 28, 48, 0.04);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #0050cb 0%, #0066ff 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-clip">
+<!-- Top Navigation Bar -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+
+<!-- Pricing Cards Section -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-32">
+<!-- Free Tier -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-10 ambient-shadow border border-outline-variant/15 flex flex-col h-full hover:translate-y-[-4px] transition-transform">
+<div class="mb-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Free</h3>
+<p class="text-outline text-sm">Essential tools for beginners.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-surface font-headline">$0</span>
+<span class="text-outline font-label">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Public Resource Library
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Community Discord Access
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Weekly Newsletter
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-full border border-primary text-primary font-semibold font-label hover:bg-surface-container-low transition-colors">Start for Free</button>
+</div>
+<!-- Pro Tier (Highlighted) -->
+<div class="relative bg-surface-container-lowest rounded-xl p-6 md:p-10 ambient-shadow border-2 border-primary flex flex-col h-[105%] z-10 scale-105 shadow-xl shadow-primary/5">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest font-label uppercase">Most Popular</div>
+<div class="mb-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Pro</h3>
+<p class="text-outline text-sm">Professional mastery package.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-surface font-headline">$49</span>
+<span class="text-outline font-label">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Full Premium Resources
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Early Access Insights
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Personal Project Dashboard
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Advanced Course Modules
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Direct Technical Support
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-full primary-gradient text-on-primary font-bold font-label hover:scale-[0.98] transition-transform">Get Pro Access</button>
+</div>
+<!-- Enterprise Tier -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-10 ambient-shadow border border-outline-variant/15 flex flex-col h-full hover:translate-y-[-4px] transition-transform">
+<div class="mb-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Enterprise</h3>
+<p class="text-outline text-sm">For teams and custom needs.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-surface font-headline">Custom</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Technical Consulting
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Unlimited Team Seats
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-label">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        SLA &amp; Dedicated Account Manager
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-full bg-surface-container-high text-on-surface font-semibold font-label hover:bg-surface-container-highest transition-colors" onclick="window.location.href='/support/contact_us_desktop.html'">Contact Us</button>
+</div>
+</section>
+<!-- Feature Comparison Table -->
+<section class="max-w-5xl mx-auto px-6 mb-32 overflow-hidden">
+<h2 class="font-headline text-3xl font-bold text-center mb-16">Compare features</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden ambient-shadow">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant/15">
+<th class="p-6 font-headline font-bold text-on-surface">Features</th>
+<th class="p-6 font-headline font-bold text-on-surface text-center">Free</th>
+<th class="p-6 font-headline font-bold text-primary text-center">Pro</th>
+<th class="p-6 font-headline font-bold text-on-surface text-center">Enterprise</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15">
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="p-6 font-label text-on-surface-variant">Public Resources</td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="p-6 font-label text-on-surface-variant">Project Dashboard</td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-outline">remove</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="p-6 font-label text-on-surface-variant">Early Access Insights</td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-outline">remove</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="p-6 font-label text-on-surface-variant">Premium Learning Resources</td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-outline">remove</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50">
+<td class="p-6 font-label text-on-surface-variant">Custom Consulting</td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-outline">remove</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-outline">remove</span></td>
+<td class="p-6 text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto px-6 mb-32">
+<h2 class="font-headline text-3xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+<div class="grid gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow border border-outline-variant/15">
+<h4 class="font-headline font-bold text-on-surface mb-3 flex items-center justify-between">
+                        Can I switch plans later?
+                        <span class="material-symbols-outlined text-primary">add</span>
+</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Yes, you can upgrade or downgrade your plan at any time from your account settings. Changes will be applied at the start of your next billing cycle.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow border border-outline-variant/15">
+<h4 class="font-headline font-bold text-on-surface mb-3 flex items-center justify-between">
+                        Is there a discount for annual billing?
+                        <span class="material-symbols-outlined text-primary">add</span>
+</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Absolutely! Choosing annual billing saves you 20% compared to the monthly subscription rate across all paid tiers.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow border border-outline-variant/15">
+<h4 class="font-headline font-bold text-on-surface mb-3 flex items-center justify-between">
+                        What kind of support is included in Enterprise?
+                        <span class="material-symbols-outlined text-primary">add</span>
+</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Enterprise clients receive a dedicated Slack channel, 24-hour response SLAs, and bi-weekly strategic consulting calls with our senior tech architects.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="primary-gradient rounded-3xl p-8 md:p-16 text-center text-on-primary shadow-2xl shadow-primary/20 relative overflow-hidden">
+<!-- Abstract background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl font-extrabold mb-6">Ready to elevate your engineering?</h2>
+<p class="text-lg opacity-90 max-w-xl mx-auto mb-10">Join over 15,000 tech professionals who have advanced their careers through the Atelier Tech framework.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<button class="bg-white text-primary px-4 md:px-10 py-4 rounded-full font-bold font-label hover:shadow-lg hover:scale-[1.02] transition-all" onclick="window.location.href='/auth/user_registration.html'">Get Started Today</button>
+<button class="bg-transparent border-2 border-white/30 text-white px-4 md:px-10 py-4 rounded-full font-bold font-label hover:bg-white/10 transition-all" onclick="window.location.href='/support/contact_us_desktop.html'">Talk to Sales</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+

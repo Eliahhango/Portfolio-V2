@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Prime | EliTechWiz Case Study</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-surface": "#0b1c30",
+                "on-primary-container": "#f8f7ff",
+                "outline": "#727687",
+                "on-primary-fixed-variant": "#003fa4",
+                "primary-fixed": "#dae1ff",
+                "primary": "#0050cb",
+                "tertiary-container": "#8848f9",
+                "secondary-fixed-dim": "#6bd8cb",
+                "on-tertiary": "#ffffff",
+                "on-surface-variant": "#424656",
+                "surface-dim": "#cbdbf5",
+                "inverse-on-surface": "#eaf1ff",
+                "surface-container-low": "#eff4ff",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#89f5e7",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#213145",
+                "on-tertiary-fixed-variant": "#5a00c6",
+                "on-background": "#0b1c30",
+                "surface-container": "#e5eeff",
+                "surface-variant": "#d3e4fe",
+                "primary-fixed-dim": "#b3c5ff",
+                "on-primary-fixed": "#001849",
+                "tertiary": "#6e26df",
+                "error-container": "#ffdad6",
+                "on-secondary-fixed": "#00201d",
+                "secondary-container": "#86f2e4",
+                "on-tertiary-fixed": "#25005a",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#b3c5ff",
+                "tertiary-fixed-dim": "#d2bbff",
+                "surface-container-highest": "#d3e4fe",
+                "on-error-container": "#93000a",
+                "primary-container": "#0066ff",
+                "on-secondary-fixed-variant": "#005049",
+                "on-secondary-container": "#006f66",
+                "surface-tint": "#0054d6",
+                "surface-container-high": "#dce9ff",
+                "surface-bright": "#f8f9ff",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#fdf6ff",
+                "secondary": "#006a61",
+                "outline-variant": "#c2c6d8",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#eaddff",
+                "surface": "#f8f9ff",
+                "background": "#f8f9ff"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0050cb 0%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0050cb 0%, #0066ff 100%);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 10px 30px rgba(11, 28, 48, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-clip">
+<!-- Top Navigation Shell -->
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<!-- Section 1: Hero -->
+
+<!-- Section 2: The Brief -->
+<section class="py-16 md:py-32 px-6 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
+<div class="lg:col-span-7">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-4xl md:text-6xl font-headline font-extrabold text-primary-container/30">01</span>
+<span class="h-px flex-1 bg-outline-variant/15"></span>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                    Reimagining data flow for a global logistics leader.
+                </h2>
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+<p>Our client, a Fortune 500 logistics giant, faced a critical bottleneck: their legacy systems were unable to process real-time telemetry from over 50,000 active transit units. The challenge was not just visual; it was structural.</p>
+<p>The goal was to build a "single pane of glass" that could ingest millions of data points per second while remaining performant and accessible for executive decision-makers.</p>
+</div>
+</div>
+<aside class="lg:col-span-5 bg-surface-container-low rounded-xl p-6 md:p-10 space-y-8 sticky top-32">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Client</h4>
+<p class="font-bold text-on-surface">Global Transit Solutions</p>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Industry</h4>
+<p class="font-bold text-on-surface">Logistics &amp; Supply Chain</p>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Timeline</h4>
+<p class="font-bold text-on-surface">8 Months</p>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Role</h4>
+<p class="font-bold text-on-surface">Product Strategy &amp; Engineering</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/15">
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-4">Tech Stack</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-sm font-medium">React.js</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-sm font-medium">Rust</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-sm font-medium">WebGPU</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-sm font-medium">PostgreSQL</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-sm font-medium">AWS</span>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- Section 3: The Solution (Visual Narrative) -->
+<section class="py-16 md:py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-24 text-center">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-4">The Solution</h2>
+<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+</div>
+<!-- Bento Layout for Narrative -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Visual -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-2 ambient-shadow overflow-hidden group">
+<img alt="Main solution interface" class="w-full h-[500px] object-cover rounded-lg group-hover:scale-105 transition-transform duration-700" data-alt="Wide shot of a modern enterprise software interface with clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3DNYfDYv1mFZ94rjM1y5BNe8D5eTPEBP_f1S0x46jI4nBC6D53JmDqGH2dX2Fc4qD4R28-xmUNVroJu4LRa43xcboUuolp5O7IxuzQHee0n8TE_dG0oiVrkicC00Ufloav7tFSeUQXY2tGmqGUablaV-PIYhZ1_3Lsu3mXnZvTZKQ08qr9XMYHqhgLvX4UJXuQx3AGbzqR7UH3m2ZO1V4hqg4Yvel3Xrk02pfwk5OhO0i-Zn9x0jiGu0OFWG5AN8CRxZ407MsSgg"/>
+</div>
+<!-- Strategic Callout 1 -->
+<div class="md:col-span-4 bg-primary p-8 rounded-xl flex flex-col justify-between text-on-primary">
+<span class="material-symbols-outlined text-4xl">architecture</span>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-3">Custom Engineering</h3>
+<p class="text-on-primary/80 leading-relaxed">Developing a proprietary rendering engine to handle tens of thousands of real-time map entities without frame drops.</p>
+</div>
+</div>
+<!-- Strategic Callout 2 -->
+<div class="md:col-span-4 bg-surface-container-lowest p-6 md:p-10 rounded-xl ambient-shadow border border-outline-variant/10">
+<h3 class="font-headline text-2xl font-bold text-secondary mb-4">UX Strategy</h3>
+<p class="text-on-surface-variant leading-relaxed">Simplified complex multi-step workflows into an intuitive "Action-First" dashboard layout.</p>
+</div>
+<!-- Large Scale Screenshot -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-2 ambient-shadow overflow-hidden relative">
+<div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
+<img alt="Detailed UI capture" class="w-full h-[300px] object-cover rounded-lg" data-alt="Close up of high-performance data graphs and charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI_-xUJIOpf1PESzw066xCJz49cveSxQAB2XJOKoTzwGQDKJOpUwsOWmmkANpwh-P5JBY9qCP09_Q4BcpF1IiuwYIAovSZZiIZQ11w7G0ZP_kt2XyaVvI4YeRxonE3V4owtGLDqnxbIyJir1x1830wzVpXDbERScw7TzZcWSUQzPDMLQc591sVDk5FJlGjsPEojgmPDTpbP97ZoAsheh9xoJRlBzpFaBAtZqJtdLSf3sOVMPoY9FKHLPKnvwhRIANGM02CPePpToQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Quantifiable Impact -->
+<section class="py-16 md:py-32 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Metrics of Success</h4>
+<h2 class="font-headline text-4xl md:text-5xl font-bold">Quantifiable Impact</h2>
+</div>
+<div class="hidden md:block text-outline-variant font-headline text-5xl md:text-8xl font-black opacity-10">RESULTS</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl ambient-shadow text-center md:text-left border-b-4 border-primary">
+<div class="text-4xl md:text-5xl md:text-6xl font-headline font-extrabold text-on-surface mb-4">40%</div>
+<p class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Efficiency Boost</p>
+<p class="text-on-surface-variant">Increase in route optimization and resource allocation speed.</p>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl ambient-shadow text-center md:text-left border-b-4 border-secondary">
+<div class="text-4xl md:text-5xl md:text-6xl font-headline font-extrabold text-on-surface mb-4">2.5s</div>
+<p class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Performance Gain</p>
+<p class="text-on-surface-variant">Faster load times across all critical management views.</p>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-6 md:p-12 rounded-xl ambient-shadow text-center md:text-left border-b-4 border-tertiary">
+<div class="text-4xl md:text-5xl md:text-6xl font-headline font-extrabold text-on-surface mb-4">0.0%</div>
+<p class="text-xs font-label uppercase tracking-widest text-secondary mb-2">Critical Failures</p>
+<p class="text-on-surface-variant">Zero system-wide downtime since the ecosystem launch.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Next Steps / CTA -->
+<section class="py-16 md:py-32 px-6">
+<div class="max-w-5xl mx-auto bg-inverse-surface rounded-[2rem] p-6 md:p-12 md:p-24 text-center relative overflow-hidden">
+<!-- Decorative Accent -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 blur-[100px] -ml-32 -mb-32"></div>
+<h2 class="font-headline text-4xl md:text-6xl font-bold text-white mb-8 relative z-10">
+                Ready to start your project?
+            </h2>
+<p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 relative z-10">
+                Let's discuss how we can engineer your next high-impact digital ecosystem. Our team is ready to scale your vision.
+            </p>
+<div class="relative z-10">
+<button class="btn-gradient text-white px-4 md:px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20" onclick="window.location.href='/support/contact_us_desktop.html'">
+                    Get in Touch
+                </button>
+</div>
+</div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#cbdbf5",
+              "primary-container": "#0066ff",
+              "on-tertiary": "#ffffff",
+              "secondary": "#006a61",
+              "on-background": "#0b1c30",
+              "error-container": "#ffdad6",
+              "secondary-container": "#86f2e4",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-variant": "#d3e4fe",
+              "tertiary-fixed-dim": "#d2bbff",
+              "surface-bright": "#f8f9ff",
+              "primary-fixed-dim": "#b3c5ff",
+              "surface-container-low": "#eff4ff",
+              "primary": "#0050cb",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eaf1ff",
+              "background": "#f8f9ff",
+              "surface-container": "#e5eeff",
+              "on-tertiary-container": "#fdf6ff",
+              "on-secondary-container": "#006f66",
+              "tertiary": "#6e26df",
+              "surface-tint": "#0054d6",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#424656",
+              "on-primary-fixed-variant": "#003fa4",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "primary-fixed": "#dae1ff",
+              "on-secondary-fixed-variant": "#005049",
+              "on-primary-container": "#f8f7ff",
+              "outline-variant": "#c2c6d8",
+              "tertiary-fixed": "#eaddff",
+              "on-primary-fixed": "#001849",
+              "secondary-fixed-dim": "#6bd8cb",
+              "on-error": "#ffffff",
+              "inverse-surface": "#213145",
+              "inverse-primary": "#b3c5ff",
+              "surface-container-highest": "#d3e4fe",
+              "tertiary-container": "#8848f9",
+              "on-secondary-fixed": "#00201d",
+              "surface-container-high": "#dce9ff",
+              "surface": "#f8f9ff",
+              "secondary-fixed": "#89f5e7",
+              "on-surface": "#0b1c30",
+              "outline": "#727687",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#25005a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            keyframes: {
+                reveal: {
+                    '0%': { opacity: '0', transform: 'translateY(40px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' }
+                }
+            },
+            animation: {
+                reveal: 'reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-shadow {
+            box-shadow: 0px 10px 30px rgba(11, 28, 48, 0.04);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #0050cb 0%, #0066ff 100%);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+        }
+        .reveal-on-scroll.active {
+            animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .heroic-overlay {
+            background: linear-gradient(90deg, rgba(248,249,255,1) 0%, rgba(248,249,255,0.9) 40%, rgba(248,249,255,0) 100%);
+        }
+        @media (max-width: 768px) {
+            .heroic-overlay {
+                background: linear-gradient(0deg, rgba(248,249,255,1) 0%, rgba(248,249,255,0.8) 60%, rgba(248,249,255,0.4) 100%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-clip">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 h-20">     
+<a class="text-2xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2 relative z-10" href="/index.html">
+    <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+</a>
+<div class="hidden md:flex items-center gap-6">
+    <a class="font-manrope text-sm font-semibold tracking-tight text-slate-700 hover:text-primary transition-colors" href="/index.html">Home</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/about/mission_values.html">About</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/services/services_overview.html">Services</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights_blog_list.html">Blog</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/blog/latest_insights.html">Insights</a>
+    <a class="font-manrope text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="/support/contact_us_desktop.html">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4 relative z-10">
+    <a href="/auth/client_login_secure.html" class="hidden md:flex items-center text-sm font-bold text-slate-600 hover:text-primary transition-colors gap-1">
+        <span class="material-symbols-outlined text-lg">login</span> Portal
+    </a>
+    <a href="/support/schedule_a_consultation.html" class="bg-primary text-white px-4 py-2 sm:py-2.5 rounded-lg font-manrope text-sm font-bold tracking-tight transition-all shadow-lg hover:shadow-primary/30 flex items-center gap-1 sm:gap-2">
+        <span class="material-symbols-outlined text-sm">rocket_launch</span> <span class="whitespace-nowrap hidden sm:inline">Hire Me</span><span class="whitespace-nowrap inline sm:hidden">Hire</span>
+    </a>
+    <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden');" class="md:hidden flex items-center justify-center p-1 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors ml-1">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl h-[calc(100vh-5rem)] overflow-y-auto z-40">
+    <div class="flex flex-col p-6 gap-6">
+        <a class="font-manrope text-lg font-semibold text-slate-800" href="/index.html">Home</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/about/mission_values.html">About</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/services/services_overview.html">Services</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/portfolio/portfolio_projects_mobile.html">Portfolio</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights_blog_list.html">Blog</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/blog/latest_insights.html">Insights</a>
+        <a class="font-manrope text-lg font-medium text-slate-600" href="/support/contact_us_desktop.html">Contact</a>
+        <div class="h-px bg-slate-100 my-2"></div>
+        <a href="/auth/client_login_secure.html" class="font-manrope text-lg font-bold text-primary flex items-center gap-2 pb-4">
+            <span class="material-symbols-outlined text-xl">login</span> Client Portal
+        </a>
+    </div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 mb-32">
+<div class="max-w-3xl">
+<h1 class="font-headline text-4xl md:text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-8">
+                    Strategic Solutions for a <span class="text-primary">Digital World</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed font-body opacity-90">
+                    We combine deep technical expertise with intuitive design to build products that scale with your vision.
+                </p>
+</div>
+</section>
+<!-- Heroic Services Sections -->
+<div class="space-y-32 mb-40">
+<!-- Software Development -->
+<section class="reveal-on-scroll relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Code development background" class="w-full h-full object-cover grayscale opacity-20 scale-105 transition-transform duration-[20s] hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbpfxss1WzSaEuo7f5TZgYc2h8xoSgQ-1GXuYNDiPG4lVs0hUNA6BFwqZw5xVDueOZ49ua9nvwJGvcZT5_5kkPnPUfSg9cX40VEzMeXOWnaVWc-M7-6VkkwwUNZClomHHhgJ7JdOrIT0fO01PeW-F_bvp9foIm6Gwb-BmM7DUsF94b3DR5Qhexij95zqExBZT7tTtqijhpS5SJ1TQVP61cz1hBWqfgZ0x-G3wKXGf7Ax58ZYms7qkMtapuXhHk1CevjFHrsFQzUfw"/>
+<div class="absolute inset-0 heroic-overlay"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
+<div class="max-w-xl">
+<div class="mb-8 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="terminal">terminal</span>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Software Development</h2>
+<p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed">
+                            We engineer robust, high-performance applications built with clean architecture. From microservices to enterprise platforms, we ensure your tech stack is future-proof and hyper-scalable.
+                        </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-on-surface-variant font-medium">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Cloud Native</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> API Integration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Legacy Modernization</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> DevOps Automation</li>
+</ul>
+<a class="inline-flex items-center gap-3 bg-primary text-on-primary px-4 md:px-8 py-4 rounded-full font-bold tracking-tight hover:shadow-lg hover:shadow-primary/30 transition-all" href="#">
+                            Explore Development <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- UI/UX Design -->
+<section class="reveal-on-scroll relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Design interface background" class="w-full h-full object-cover grayscale opacity-20 scale-105 transition-transform duration-[20s] hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeuI4-CE7h1_Tp4muT-MIO7dCwiP1jSv1YvjVhNgH-h3RPxa5qv1qrQlerqQVrEAZib48AO1ZfcBjd1oX2mYmGey08Y2i6QDtfEwe0IuyBqTd0VR-3lDby0US2ea-fihMseNlnXz27mB5PK44hvkoDGT9SvvJJhZWSW9wJeWms_zSpgzT88NISywKU0mSKlrHo9veMy3ek3GwJKHYgnqGyy-HARTeKl5YCY-3WM_Z_Pei4wYDuiiXtt5qcYPdeQgeW8tx37PzY0Ng"/>
+<div class="absolute inset-0 heroic-overlay md:bg-gradient-to-l from-surface via-surface/90 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full flex justify-end">
+<div class="max-w-xl text-left md:text-right">
+<div class="mb-8 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-secondary/10 text-secondary md:ml-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="palette">palette</span>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">UI/UX Design</h2>
+<p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed">
+                            Editorial-grade interfaces that prioritize user joy and conversion. We blend aesthetic excellence with psychological insights to create experiences that resonate with your users.
+                        </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-on-surface-variant font-medium justify-items-start md:justify-items-end">
+<li class="flex items-center gap-2 md:flex-row-reverse"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> User Research</li>
+<li class="flex items-center gap-2 md:flex-row-reverse"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Prototyping</li>
+<li class="flex items-center gap-2 md:flex-row-reverse"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Visual Identity</li>
+<li class="flex items-center gap-2 md:flex-row-reverse"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Design Systems</li>
+</ul>
+<a class="inline-flex items-center gap-3 bg-secondary text-on-primary px-4 md:px-8 py-4 rounded-full font-bold tracking-tight hover:shadow-lg hover:shadow-secondary/30 transition-all" href="/portfolio/all_projects.html">
+                            View Case Studies <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Tech Consulting -->
+<section class="reveal-on-scroll relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Tech infrastructure background" class="w-full h-full object-cover grayscale opacity-20 scale-105 transition-transform duration-[20s] hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSjk0Vp_tBmzYWZpkxIl_wtGFfHCMlBeCjuroFHzjctq-gTJgGkbYBmulP7MyN5exfxVU28ZjttEcidxHNHeu4SXEgsk0ZeTLJNfLf--OxTN-A0n7ymU8yD4rfVToYfqLtfbGVqid-sN14Gh9PtNh9eNHznIC21HHVopirrxqoTuOQTxvsybSo3Rn4oRMAEtL91qVJ1jyWAYWNmQdJkBU4jMYuXVFB-PDLi9U_KXB3loztoY970yqyxPyJMbazx8pSioXOqQnhEs4"/>
+<div class="absolute inset-0 heroic-overlay"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
+<div class="max-w-xl">
+<div class="mb-8 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-tertiary/10 text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="hub">hub</span>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Tech Consulting</h2>
+<p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed">
+                            Expert guidance on enterprise architecture and digital transformation. We help you navigate complex tech landscapes and select the right stacks to achieve your business goals.
+                        </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-on-surface-variant font-medium">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Tech Audit</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> CTO Advisory</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> Cloud Migration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> AI Strategy</li>
+</ul>
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-primary px-4 md:px-8 py-4 rounded-full font-bold tracking-tight hover:shadow-lg hover:shadow-tertiary/30 transition-all" href="/support/schedule_a_consultation.html">
+                            Talk to an Expert <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Ready to Start CTA -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 mb-24 reveal-on-scroll">
+<div class="relative overflow-hidden rounded-[2.5rem] primary-gradient p-6 md:p-12 md:p-32 text-center">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold text-on-primary mb-8 tracking-tight">Ready to build the future?</h2>
+<p class="text-on-primary/80 text-xl md:text-2xl mb-12 leading-relaxed">
+                        Join forward-thinking companies who trust us with their most critical digital initiatives.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-white text-primary px-4 md:px-12 py-5 rounded-full font-headline font-extrabold text-lg hover:bg-surface-container-low transition-all shadow-xl" onclick="window.location.href='/support/schedule_a_consultation.html'">
+                            Schedule a Consultation
+                        </button>
+<button class="border-2 border-white/30 text-white px-4 md:px-12 py-5 rounded-full font-headline font-extrabold text-lg hover:bg-white/10 transition-all" onclick="window.location.href='/portfolio/portfolio_projects_mobile.html'">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<!-- Abstract Decorative Shapes -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] max-w-[100vw]"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-tertiary/20 rounded-full blur-[100px] max-w-[100vw]"></div>
+</div>
+</section>
+</main>
+
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 border-t border-slate-800 py-10 md:py-16 text-slate-300 mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-12 mb-12">
+      <div class="lg:col-span-2 mb-8 md:mb-0">
+        <a class="text-2xl font-extrabold text-white mb-6 flex items-center gap-2" href="/index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">token</span> EliTechWiz
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6 pr-4">Visionary Technologist, Lead Architect & Creative Designer. Bridging the gap between secure backend engineering and stunning frontend experiences.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="share">share</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="code">code</span></a>
+          <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-primary transition-all bg-slate-800" href="/index.html"><span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span></a>
+        </div>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Services & Expertise</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/services_overview.html">All Services</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/web_development_service_detail.html">Web Development</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/penetration_testing_detail.html">Penetration Testing</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/services/pricing_tiers_mobile.html">Pricing Tiers</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/portfolio_projects_mobile.html">Case Studies</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/portfolio/our_design_process_mobile_guide.html">Design Process</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Insights & Company</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/mission_values.html">Mission & Values</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/about/technology_stack_mobile.html">Technology Stack</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/latest_insights.html">Latest Insights</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/insights_technical_faq.html">Technical FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/blog/resource_library.html">Resource Library</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/contact_us_desktop.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="border-b border-slate-800 md:border-none pb-4 md:pb-0">
+        <button class="w-full flex items-center justify-between md:cursor-default" onclick="if(window.innerWidth < 768) { this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron').classList.toggle('rotate-180'); }">
+          <h5 class="font-bold text-white tracking-wide uppercase text-xs">Portals & Admin</h5>
+          <span class="material-symbols-outlined text-slate-400 md:hidden transition-transform duration-300 chevron text-lg">expand_more</span>
+        </button>
+        <ul class="hidden md:block space-y-3 text-sm text-slate-400 mt-4 md:mt-6">
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/client_login_secure.html"><span class="material-symbols-outlined text-sm">lock</span> Client Login</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/auth/user_registration.html"><span class="material-symbols-outlined text-sm">person_add</span> Register</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/user_dashboard.html"><span class="material-symbols-outlined text-sm">dashboard</span> Client Dashboard</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/user_portal/project_status_tracking.html"><span class="material-symbols-outlined text-sm">update</span> Project Tracker</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/admin/admin_dashboard.html"><span class="material-symbols-outlined text-sm">admin_panel_settings</span> Admin Panel</a></li>
+          <li><a class="hover:text-primary transition-colors flex items-center gap-2" href="/support/elitechwiz_assistant_chat.html"><span class="material-symbols-outlined text-sm">smart_toy</span> AI Assistant</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 mt-4 md:mt-0 border-t border-slate-800 md:border-none">
+      <p>&copy; 2026 EliTechWiz Innovations</p>
+      <div class="flex gap-6">
+        <a class="hover:text-white transition-colors" href="/index.html">Privacy Policy</a>
+        <a class="hover:text-white transition-colors" href="/index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
+
