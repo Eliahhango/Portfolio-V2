@@ -9,3 +9,5 @@ fix_*.js
 
 *.js
 *.py
+
+.env
